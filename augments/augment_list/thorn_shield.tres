@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Augment" load_steps=7 format=3 uid="uid://cl118py8xru3q"]
+
+[ext_resource type="Script" uid="uid://bb20oepmrbiha" path="res://augments/effects/thorn_shield.gd" id="1_tflm0"]
+[ext_resource type="Script" uid="uid://cf0rw57ggiwtx" path="res://stats/stat_field.gd" id="2_1ymay"]
+[ext_resource type="Script" uid="uid://bw6hgli8y3lab" path="res://augments/augment.gd" id="3_drt4k"]
+[ext_resource type="Texture2D" uid="uid://c7kybuk8yguna" path="res://assets/art/augments/thorn_shield/thorn_shield_icon.png" id="4_1ymay"]
+
+[sub_resource type="Resource" id="Resource_drt4k"]
+script = ExtResource("1_tflm0")
+effect_type = 2
+metadata/_custom_type_script = "uid://bb20oepmrbiha"
+
+[sub_resource type="Resource" id="Resource_tflm0"]
+script = ExtResource("2_1ymay")
+stat_attribute = 5
+stat_value = -15.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[resource]
+script = ExtResource("3_drt4k")
+name = "THORN SHIELD"
+texture = ExtResource("4_1ymay")
+augment_effect = SubResource("Resource_drt4k")
+augment_stats = Array[ExtResource("2_1ymay")]([SubResource("Resource_tflm0")])
+metadata/_custom_type_script = "uid://bw6hgli8y3lab"

@@ -1,0 +1,127 @@
+[gd_resource type="Resource" script_class="ItemDB" load_steps=33 format=3 uid="uid://bbeu8j0kur5ob"]
+
+[ext_resource type="Texture2D" uid="uid://bv4crrrge0ovb" path="res://assets/art/items/radiant_stellar/sword/rs_sword.png" id="1_2n5gt"]
+[ext_resource type="Script" uid="uid://d1pjmjcj4tsv6" path="res://items/item_db.gd" id="1_4j8h3"]
+[ext_resource type="Script" uid="uid://dl7m5depbj021" path="res://items/item.gd" id="1_qoymp"]
+[ext_resource type="Texture2D" uid="uid://biahcyduemifq" path="res://assets/art/items/radiant_stellar/scythe/rs_scythe.png" id="2_lsi5w"]
+[ext_resource type="Texture2D" uid="uid://b45kmbncwb267" path="res://assets/art/items/radiant_stellar/rs_pendant.png" id="3_vqtxk"]
+[ext_resource type="Texture2D" uid="uid://0d2lje6ghgu7" path="res://assets/art/items/rarity_borders/common_border.png" id="3_vybfs"]
+[ext_resource type="Texture2D" uid="uid://c1jj7skn60yr0" path="res://assets/art/items/rarity_borders/rare_border.png" id="4_pnd04"]
+[ext_resource type="Texture2D" uid="uid://cpwb3m4vbyvvf" path="res://assets/art/items/radiant_stellar/rs_ring.png" id="4_qoymp"]
+[ext_resource type="Texture2D" uid="uid://b33jhnkmoauxq" path="res://assets/art/items/rarity_borders/epic.png" id="5_w5gng"]
+[ext_resource type="Texture2D" uid="uid://du6weyo4gbhf8" path="res://assets/art/items/set2/cs_sword.png" id="6_iky56"]
+[ext_resource type="Texture2D" uid="uid://c07moj8bnwql1" path="res://assets/art/items/rarity_borders/legendary_border.png" id="6_vqtxk"]
+[ext_resource type="Texture2D" uid="uid://biq576rhuwpsi" path="res://assets/art/items/set2/cs_spear.png" id="7_uuhee"]
+[ext_resource type="Texture2D" uid="uid://bymm8ltcnrqca" path="res://assets/art/items/set2/cs_scythe.png" id="8_x5t3b"]
+[ext_resource type="Texture2D" uid="uid://yjypg3y58v5b" path="res://assets/art/items/set2/cs_circlet.png" id="9_0unfh"]
+[ext_resource type="Texture2D" uid="uid://cs1puuv2bv4nf" path="res://assets/art/items/set2/cs_pendant.png" id="10_yrton"]
+[ext_resource type="Texture2D" uid="uid://bv2063axnphqy" path="res://assets/art/items/shattered_jade/sj_sword.png" id="11_bdpfg"]
+[ext_resource type="Texture2D" uid="uid://dd0qxb4wt75rm" path="res://assets/art/items/shattered_jade/sj_scythe.png" id="12_nnws5"]
+[ext_resource type="Texture2D" uid="uid://ca18ljpcbgwir" path="res://assets/art/items/shattered_jade/sj_pendant.png" id="13_kw43t"]
+[ext_resource type="Texture2D" uid="uid://cbcrhfuo8t0o2" path="res://assets/art/items/shattered_jade/sj_circlet.png" id="14_0swrr"]
+
+[sub_resource type="Resource" id="Resource_qoymp"]
+script = ExtResource("1_qoymp")
+name = "Radiant Stellar Scythe"
+texture = ExtResource("2_lsi5w")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_doynf"]
+script = ExtResource("1_qoymp")
+name = "Radiant Stellar Sword"
+texture = ExtResource("1_2n5gt")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_iky56"]
+script = ExtResource("1_qoymp")
+name = "Radiant Stellar Pendant"
+type = 2
+texture = ExtResource("3_vqtxk")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_uuhee"]
+script = ExtResource("1_qoymp")
+name = "Radiant Stellar Circlet"
+type = 1
+texture = ExtResource("4_qoymp")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_u6jay"]
+script = ExtResource("1_qoymp")
+name = "Crimson Steel Sword"
+texture = ExtResource("6_iky56")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_f2qmd"]
+script = ExtResource("1_qoymp")
+name = "Crimson Steel Spear"
+texture = ExtResource("7_uuhee")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_vvgel"]
+script = ExtResource("1_qoymp")
+name = "Crimson Steel Scythe"
+texture = ExtResource("8_x5t3b")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_jvxqj"]
+script = ExtResource("1_qoymp")
+name = "Crimson Steel Circlet"
+type = 1
+texture = ExtResource("9_0unfh")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_08wb0"]
+script = ExtResource("1_qoymp")
+name = "Crimson Steel Pendant"
+type = 2
+texture = ExtResource("10_yrton")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_povol"]
+script = ExtResource("1_qoymp")
+name = "Shattered Jade Sword"
+texture = ExtResource("11_bdpfg")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_w4flb"]
+script = ExtResource("1_qoymp")
+name = "Shattered Jade Scythe"
+texture = ExtResource("12_nnws5")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_h0agm"]
+script = ExtResource("1_qoymp")
+name = "Shattered Jade Pendant"
+type = 2
+texture = ExtResource("13_kw43t")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[sub_resource type="Resource" id="Resource_q0c1t"]
+script = ExtResource("1_qoymp")
+name = "Shattered Jade Circlet"
+type = 1
+texture = ExtResource("14_0swrr")
+metadata/_custom_type_script = "uid://dl7m5depbj021"
+
+[resource]
+script = ExtResource("1_4j8h3")
+item_texture_map = Dictionary[String, Texture2D]({
+"Radiant Stellar Circlet": ExtResource("4_qoymp"),
+"Radiant Stellar Pendant": ExtResource("3_vqtxk"),
+"Radiant Stellar Scythe": ExtResource("2_lsi5w"),
+"Radiant Stellar Sword": ExtResource("1_2n5gt")
+})
+item_list = Array[ExtResource("1_qoymp")]([SubResource("Resource_qoymp"), SubResource("Resource_doynf"), SubResource("Resource_iky56"), SubResource("Resource_uuhee"), SubResource("Resource_u6jay"), SubResource("Resource_f2qmd"), SubResource("Resource_vvgel"), SubResource("Resource_jvxqj"), SubResource("Resource_08wb0"), SubResource("Resource_povol"), SubResource("Resource_w4flb"), SubResource("Resource_h0agm"), SubResource("Resource_q0c1t")])
+rarity_texture_map = Dictionary[int, Texture2D]({
+0: ExtResource("3_vybfs"),
+1: ExtResource("4_pnd04"),
+2: ExtResource("5_w5gng"),
+3: ExtResource("6_vqtxk")
+})
+rarity_color_map = Dictionary[int, Color]({
+0: Color(0.19897604, 0.7314531, 0.44254258, 1),
+1: Color(0.15686275, 0.5372549, 0.87058824, 1),
+2: Color(0.8862745, 0.29411766, 0.2901961, 1),
+3: Color(0.9372549, 0.62352943, 0.15294118, 1)
+})

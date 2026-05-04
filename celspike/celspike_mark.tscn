@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwatk3or8hkvd"]
+
+[ext_resource type="Script" uid="uid://ddjefd1mmr33m" path="res://celspike/celspike_mark.gd" id="1_3b313"]
+[ext_resource type="Texture2D" uid="uid://3hfrftd7d2ff" path="res://assets/art/cel_spike/mark/mark.png" id="1_jqtw5"]
+[ext_resource type="Texture2D" uid="uid://dwfd6q6xovuyn" path="res://assets/art/shapes/mouse_4.png" id="3_3b313"]
+
+[node name="CelspikeMark" type="Node2D" node_paths=PackedStringArray("celspike_sprite", "mouse_sprite")]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_3b313")
+celspike_sprite = NodePath("CelspikeSprite")
+mouse_sprite = NodePath("MouseSprite")
+
+[node name="CelspikeSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("1_jqtw5")
+
+[node name="MouseSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(550, -940)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("3_3b313")

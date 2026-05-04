@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Augment" load_steps=7 format=3 uid="uid://cfq6ks4thqj2j"]
+
+[ext_resource type="Script" uid="uid://dl3443uxgw45w" path="res://augments/effects/absolute_focus.gd" id="1_sdu4d"]
+[ext_resource type="Script" uid="uid://cf0rw57ggiwtx" path="res://stats/stat_field.gd" id="2_i7xck"]
+[ext_resource type="Script" uid="uid://bw6hgli8y3lab" path="res://augments/augment.gd" id="3_wkjgd"]
+[ext_resource type="Texture2D" uid="uid://dljf1nw2aiw0s" path="res://assets/art/augments/absolute_focus/absolute_focusv2.png" id="4_sdu4d"]
+
+[sub_resource type="Resource" id="Resource_wkjgd"]
+script = ExtResource("1_sdu4d")
+effect_type = 3
+metadata/_custom_type_script = "uid://dl3443uxgw45w"
+
+[sub_resource type="Resource" id="Resource_sdu4d"]
+script = ExtResource("2_i7xck")
+stat_attribute = 2
+stat_value = -25.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[resource]
+script = ExtResource("3_wkjgd")
+name = "ABSOLUTE FOCUS"
+texture = ExtResource("4_sdu4d")
+augment_effect = SubResource("Resource_wkjgd")
+augment_stats = Array[ExtResource("2_i7xck")]([SubResource("Resource_sdu4d")])
+metadata/_custom_type_script = "uid://bw6hgli8y3lab"

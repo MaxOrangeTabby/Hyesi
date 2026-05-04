@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtp0o8yqrp251"]
+
+[ext_resource type="FontFile" uid="uid://ddmot6hbvj2ks" path="res://assets/fonts/BeaufortForLoL-OTF/BeaufortforLOL-BoldItalic.otf" id="1_k1x6r"]
+[ext_resource type="Script" uid="uid://cw4bfuprdoxoa" path="res://augments/ui/augment_select.gd" id="1_qb6vi"]
+[ext_resource type="PackedScene" uid="uid://bg2hmmp045cd4" path="res://augments/ui/augment_card.tscn" id="1_rp8dq"]
+[ext_resource type="FontFile" uid="uid://4stdpsqupww8" path="res://assets/fonts/BeaufortForLoL-TTF/BeaufortforLOL-Light.ttf" id="4_vx13p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qb6vi"]
+bg_color = Color(0.07336994, 0.14254406, 0.21468824, 0.8627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1x6r"]
+bg_color = Color(0.32156864, 0.2901961, 0.7176471, 1)
+
+[node name="AugmentSelectUI" type="CanvasLayer"]
+process_mode = 3
+layer = 5
+script = ExtResource("1_qb6vi")
+augment_card = ExtResource("1_rp8dq")
+
+[node name="AugmentSelectBox" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qb6vi")
+
+[node name="Control" type="Control" parent="AugmentSelectBox"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AugmentSelectBox/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+
+[node name="MarginContainer" type="MarginContainer" parent="AugmentSelectBox/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AugmentSelectBox/Control/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TitlePrompt" type="Label" parent="AugmentSelectBox/Control/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_k1x6r")
+theme_override_font_sizes/font_size = 126
+text = "SELECT 1 AUGMENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AugmentSelectBox/Control/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LivesPrompt" type="Label" parent="AugmentSelectBox/Control/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vx13p")
+theme_override_font_sizes/font_size = 96
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AugmentCardBox" type="GridContainer" parent="AugmentSelectBox/Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+theme_override_constants/h_separation = 60
+columns = 3
+
+[node name="Control" type="Control" parent="AugmentSelectBox/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="AugmentSelectBox/Control/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.3
+anchor_right = 0.6
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="AugmentSelectBox/Control/VBoxContainer/Control/MarginContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_k1x6r")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1x6r")
+text = "SELECT"
+
+[connection signal="pressed" from="AugmentSelectBox/Control/VBoxContainer/Control/MarginContainer2/Button" to="." method="_on_button_pressed"]

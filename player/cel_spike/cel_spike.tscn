@@ -1,0 +1,232 @@
+[gd_scene load_steps=33 format=3 uid="uid://c2ijdkemxbl7c"]
+
+[ext_resource type="Script" uid="uid://ow4pc68ogtpa" path="res://player/cel_spike/cel_spike.gd" id="1_lo6he"]
+[ext_resource type="Texture2D" uid="uid://fg84n8ek7pec" path="res://assets/art/cel_spike/contact/cel_spike_contact_1.png" id="1_wocrv"]
+[ext_resource type="Texture2D" uid="uid://h1jb0v3ejge" path="res://assets/art/cel_spike/contact/cel_spike_contact_2.png" id="2_ue2e7"]
+[ext_resource type="Texture2D" uid="uid://crfhw3wavy8mm" path="res://assets/art/cel_spike/contact/cel_spike_contact_3.png" id="3_jjf1x"]
+[ext_resource type="Texture2D" uid="uid://b23i34cxbuno0" path="res://assets/art/cel_spike/contact/cel_spike_contact_4.png" id="4_syrwr"]
+[ext_resource type="Texture2D" uid="uid://c1d5ycc5w3v6c" path="res://assets/art/cel_spike/contact/cel_spike_contact_5.png" id="5_fe6ms"]
+[ext_resource type="Texture2D" uid="uid://c86tlnl04jvml" path="res://assets/art/cel_spike/contact/cel_spike_contact_6.png" id="6_lo6he"]
+[ext_resource type="Texture2D" uid="uid://bllpm6vrtibuj" path="res://assets/art/cel_spike/contact/cel_spike_contact_7.png" id="7_n6mod"]
+[ext_resource type="Texture2D" uid="uid://blvefojre4r1a" path="res://assets/art/cel_spike/contact/cel_spike_contact_8.png" id="8_a0ah2"]
+[ext_resource type="Texture2D" uid="uid://cbnpq1x8wxjo4" path="res://assets/art/cel_spike/flight/cel_spike_flight_1.png" id="9_fe6ms"]
+[ext_resource type="Texture2D" uid="uid://cyh5evbotsl52" path="res://assets/art/cel_spike/flight/cel_spike_flight_2.png" id="10_lo6he"]
+[ext_resource type="Texture2D" uid="uid://5pp55o2p2v05" path="res://assets/art/cel_spike/flight/cel_spike_flight_3.png" id="11_n6mod"]
+[ext_resource type="Texture2D" uid="uid://ckh73ve5dkifs" path="res://assets/art/cel_spike/flight/cel_spike_flight_4.png" id="12_a0ah2"]
+[ext_resource type="Texture2D" uid="uid://dvnhsg1wnn6kd" path="res://assets/art/cel_spike/flightv2/celspike_flight_ss.png" id="14_gblbm"]
+[ext_resource type="Script" uid="uid://dcwmdllhh6el5" path="res://player/cel_spike/terrain_detector.gd" id="14_n6mod"]
+[ext_resource type="Resource" uid="uid://cp6r1ymxhicix" path="res://player/resources/player_stats.tres" id="15_875nb"]
+[ext_resource type="Texture2D" uid="uid://cw2nluuobw2t2" path="res://assets/art/cel_spike/particle/particle.png" id="15_a0ah2"]
+[ext_resource type="PackedScene" uid="uid://bwatk3or8hkvd" path="res://celspike/celspike_mark.tscn" id="18_rnlnw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnlnw"]
+atlas = ExtResource("14_gblbm")
+region = Rect2(0, 0, 2000, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5xib"]
+atlas = ExtResource("14_gblbm")
+region = Rect2(2000, 0, 2000, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ltbs"]
+atlas = ExtResource("14_gblbm")
+region = Rect2(0, 2000, 2000, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85p6u"]
+atlas = ExtResource("14_gblbm")
+region = Rect2(2000, 2000, 2000, 2000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_875nb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wocrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ue2e7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jjf1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_syrwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fe6ms")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"contact_enemy",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wocrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ue2e7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jjf1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_syrwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fe6ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lo6he")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n6mod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a0ah2")
+}],
+"loop": false,
+"name": &"contact_terrain",
+"speed": 14.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_fe6ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lo6he")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n6mod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a0ah2")
+}],
+"loop": true,
+"name": &"flight",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnlnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5xib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ltbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85p6u")
+}],
+"loop": true,
+"name": &"flightv2",
+"speed": 14.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo6he"]
+size = Vector2(190.00003, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6mod"]
+size = Vector2(296, 26)
+
+[sub_resource type="Gradient" id="Gradient_875nb"]
+offsets = PackedFloat32Array(0.0054545454, 0.99454546)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4xldy"]
+gradient = SubResource("Gradient_875nb")
+
+[sub_resource type="Curve" id="Curve_gblbm"]
+_data = [Vector2(0.009212732, 0.98501074), 0.0, 0.0, 0, 0, Vector2(0.7043551, 0.26338333), -0.41946623, -0.41946623, 0, 0, Vector2(0.9840871, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wsxtc"]
+curve = SubResource("Curve_gblbm")
+
+[sub_resource type="Curve" id="Curve_a0ah2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.035844684), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ixmvt"]
+curve = SubResource("Curve_a0ah2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rnlnw"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(5, 50, 1)
+direction = Vector3(1, 0.35, 0)
+initial_velocity_min = -1800.0
+initial_velocity_max = -1800.0
+gravity = Vector3(0, 900, 0)
+scale_min = 0.45
+scale_curve = SubResource("CurveTexture_ixmvt")
+color_ramp = SubResource("GradientTexture1D_4xldy")
+emission_curve = SubResource("CurveTexture_wsxtc")
+
+[node name="CelSpike" type="CharacterBody2D" node_paths=PackedStringArray("cel_spike_collider", "terrain_collider", "anim_sprite", "celspike_mark") groups=["cel_spike_group"]]
+scale = Vector2(0.7, 0.7)
+collision_layer = 16
+collision_mask = 10
+script = ExtResource("1_lo6he")
+cel_spike_collider = NodePath("CelSpikeCollider")
+terrain_collider = NodePath("TerrainDetector/TerrainCollider")
+anim_sprite = NodePath("AnimatedSprite2D")
+celspike_mark = NodePath("CelspikeMark")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 104)
+sprite_frames = SubResource("SpriteFrames_875nb")
+animation = &"flight"
+autoplay = "flight"
+frame = 1
+frame_progress = 0.635186
+
+[node name="TerrainDetector" type="Area2D" parent="." node_paths=PackedStringArray("anim_sprite", "cel_spike", "cel_spike_particles", "cel_spike_collider", "celspike_mark")]
+collision_layer = 16
+collision_mask = 10
+script = ExtResource("14_n6mod")
+anim_sprite = NodePath("../AnimatedSprite2D")
+cel_spike = NodePath("..")
+cel_spike_particles = NodePath("../CelSpikeParticles")
+cel_spike_collider = NodePath("../CelSpikeCollider")
+celspike_mark = NodePath("../CelspikeMark")
+player_stats = ExtResource("15_875nb")
+
+[node name="TerrainCollider" type="CollisionShape2D" parent="TerrainDetector"]
+position = Vector2(-27.857143, 0.49999967)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_lo6he")
+
+[node name="CelSpikeCollider" type="CollisionShape2D" parent="."]
+position = Vector2(-83.999985, 2.9999998)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_n6mod")
+disabled = true
+one_way_collision = true
+
+[node name="CelSpikeParticles" type="GPUParticles2D" parent="."]
+position = Vector2(104, 0)
+scale = Vector2(0.55, 0.55)
+emitting = false
+amount = 6
+texture = ExtResource("15_a0ah2")
+lifetime = 1.25
+one_shot = true
+speed_scale = 2.25
+explosiveness = 0.8
+randomness = 0.9
+collision_base_size = 0.1
+local_coords = true
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_rnlnw")
+
+[node name="CelspikeMark" parent="." instance=ExtResource("18_rnlnw")]
+
+[connection signal="body_entered" from="TerrainDetector" to="TerrainDetector" method="_on_body_entered"]

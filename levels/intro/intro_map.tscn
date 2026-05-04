@@ -1,0 +1,1533 @@
+[gd_scene load_steps=151 format=3 uid="uid://b7tdlguoilved"]
+
+[ext_resource type="PackedScene" uid="uid://cekspsyxhp7ho" path="res://player/player.tscn" id="2_mwbsy"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_hoi5d"]
+[ext_resource type="Texture2D" uid="uid://dxx4b6dpue4on" path="res://assets/art/map_twilight/1/components/Map_2_Main_Dupe-1.png" id="4_gijuy"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_p87e3"]
+[ext_resource type="Texture2D" uid="uid://dai5un31a2dgx" path="res://assets/art/map_twilight/1/components/Map_2_Main_Dupe-2.png" id="5_4db0s"]
+[ext_resource type="Texture2D" uid="uid://xpo63njredfu" path="res://assets/art/map_twilight/ArenaV2/Twilight_Arena_V2_1.png" id="5_okwq5"]
+[ext_resource type="Texture2D" uid="uid://tkui37oyi3xb" path="res://assets/art/map_twilight/1/components/Map_2_Main_Dupe-3.png" id="6_10y1c"]
+[ext_resource type="Texture2D" uid="uid://corkvx2bib7f8" path="res://assets/art/map_twilight/Transitions/Twilight_2_To_Arena-2.png" id="6_t0oce"]
+[ext_resource type="Texture2D" uid="uid://2sa0tbvqit8w" path="res://assets/art/map_twilight/Transitions/Twilight_2_To_Arena-1.png" id="6_wafno"]
+[ext_resource type="Texture2D" uid="uid://c4lehf3k8toyh" path="res://assets/art/map_twilight/1/components/Map_2_Main_Dupe-4.png" id="7_jxn7f"]
+[ext_resource type="Texture2D" uid="uid://ci2t484rb1fth" path="res://assets/art/map_temple/transition/ArenaToM3_1.png" id="7_ko7k4"]
+[ext_resource type="Texture2D" uid="uid://bpw48v5tsleig" path="res://assets/art/map_twilight/1/components/tree.png" id="7_sqemd"]
+[ext_resource type="Texture2D" uid="uid://dnwnqfx2lqqtr" path="res://assets/art/map_twilight/ArenaV2/Twilight_Arena_V2_3.png" id="8_jyoq1"]
+[ext_resource type="Texture2D" uid="uid://bkkxv38egy3my" path="res://assets/art/map_temple/1/temple1_1.png" id="8_ko7k4"]
+[ext_resource type="Texture2D" uid="uid://daqri0j77rttg" path="res://assets/art/map_twilight/2/twilight_m2_1.png" id="8_ph0so"]
+[ext_resource type="Texture2D" uid="uid://ggcq4wbbokgc" path="res://assets/art/map_twilight/1/tree_spark/tree_spark_sheet.png" id="8_sqemd"]
+[ext_resource type="Texture2D" uid="uid://dedxy462uxwpx" path="res://assets/art/map_twilight/Transitions/m1_m2_transition1.png" id="9_87123"]
+[ext_resource type="Texture2D" uid="uid://cla3hqonwl327" path="res://assets/art/map_temple/transition/ArenaToM3_2.png" id="9_ko7k4"]
+[ext_resource type="Texture2D" uid="uid://cla2hpkq515ol" path="res://assets/art/map_twilight/Transitions/m1_m2_transition2.png" id="9_okwq5"]
+[ext_resource type="Texture2D" uid="uid://82ck7uvov2rg" path="res://assets/art/map_twilight/1/components/Map_2_Main_Dupe-6.png" id="9_spbho"]
+[ext_resource type="Texture2D" uid="uid://l33m5aeu1tfq" path="res://assets/art/map_twilight/1/components/Map_2_Main_Dupe-7.png" id="9_sqemd"]
+[ext_resource type="Texture2D" uid="uid://b0y0gjkqlftd4" path="res://assets/art/map_temple/2/temple2_1.png" id="10_o6lgv"]
+[ext_resource type="Texture2D" uid="uid://b0t3gxchoinr0" path="res://assets/art/map_twilight/2/twilight_m2_2.png" id="11_6ypvv"]
+[ext_resource type="Texture2D" uid="uid://cpjtxmfj881l" path="res://assets/art/map_twilight/ArenaV2/Twilight_Arena_V2_4.png" id="11_sxdhw"]
+[ext_resource type="Texture2D" uid="uid://br66dmbhe2n2b" path="res://assets/art/map_temple/4/m5_1.png" id="11_wldth"]
+[ext_resource type="Texture2D" uid="uid://vjt65kfedqk5" path="res://assets/art/map_temple/1/temple1_2.png" id="12_qiql8"]
+[ext_resource type="Script" uid="uid://bb0errlsuj6bq" path="res://levels/intro/springs.gd" id="13_spbho"]
+[ext_resource type="Texture2D" uid="uid://dtu4e6t6k021q" path="res://assets/art/map_temple/2/temple2_2.png" id="14_8mojw"]
+[ext_resource type="Texture2D" uid="uid://cr0lr4t65v8kp" path="res://assets/art/map_twilight/2/twilight_m2_3.png" id="14_ioqcg"]
+[ext_resource type="Texture2D" uid="uid://c7188pfp0456t" path="res://assets/art/map_temple/4/m5_2.png" id="16_8v4jw"]
+[ext_resource type="Texture2D" uid="uid://bes8epac1lcw0" path="res://assets/art/map_twilight/ArenaV2/Twilight_Arena_V2_5.png" id="16_yoy8d"]
+[ext_resource type="Texture2D" uid="uid://7j7s5j5b6p7t" path="res://assets/art/map_twilight/2/twilight_m2_5.png" id="18_yoy8d"]
+[ext_resource type="Texture2D" uid="uid://cn6m48cfmqv31" path="res://assets/art/map_temple/4/m5_3.png" id="20_6hl8r"]
+[ext_resource type="Script" uid="uid://dj45sanujkue1" path="res://levels/intro/mid_springs.gd" id="20_6ypvv"]
+[ext_resource type="Texture2D" uid="uid://dooi0e0nvid44" path="res://assets/art/map_twilight/2/twilight_m2_6.png" id="20_qwgot"]
+[ext_resource type="Texture2D" uid="uid://drnqjrb4bdur0" path="res://assets/art/map_twilight/2/twilight_m2_7.png" id="21_3lkf1"]
+[ext_resource type="Texture2D" uid="uid://b4kvwsuacfvgw" path="res://assets/art/map_twilight/ArenaV2/Twilight_Arena_V2_6.png" id="21_qwgot"]
+[ext_resource type="Texture2D" uid="uid://bin48ln74mw5a" path="res://assets/art/map_twilight/ArenaV2/Twilight_Arena_V2_7.png" id="22_3lkf1"]
+[ext_resource type="Texture2D" uid="uid://baqi545w1v4y0" path="res://assets/art/map_twilight/ArenaV2/Twilight_Arena_V2_8.png" id="23_t0oce"]
+[ext_resource type="Texture2D" uid="uid://c15qvgimvtenb" path="res://assets/art/map_twilight/ArenaV2/Twilight_Arena_V2_9.png" id="25_3lkf1"]
+[ext_resource type="Texture2D" uid="uid://76c3kxhyj2ds" path="res://assets/lights/circle.png" id="25_7gkxj"]
+[ext_resource type="Texture2D" uid="uid://ckcjvqotf53e6" path="res://assets/art/map_temple/2/temple2_3.png" id="25_8vasf"]
+[ext_resource type="PackedScene" uid="uid://df7lh0s75y04y" path="res://enemies/rock_mini_boss1/rock_mini_boss1.tscn" id="26_p64k8"]
+[ext_resource type="Texture2D" uid="uid://cda8mxdywtr4c" path="res://assets/art/map_twilight/ArenaV2/Twilight_Arena_V2_10.png" id="27_t0oce"]
+[ext_resource type="PackedScene" uid="uid://c1kvfe0750ums" path="res://enemies/boss_1/boss_1.tscn" id="28_743bb"]
+[ext_resource type="Texture2D" uid="uid://uwftj63heybs" path="res://assets/art/map_intro/1/intro1_1.png" id="29_4mo8o"]
+[ext_resource type="PackedScene" uid="uid://b28ha5l5lkrsu" path="res://enemies/thorn_beetle/thorn_beetle.tscn" id="29_elj26"]
+[ext_resource type="Texture2D" uid="uid://cvunwbyc25sn4" path="res://assets/art/map_temple/4/m5_4.png" id="29_sex7d"]
+[ext_resource type="PackedScene" uid="uid://bgap0luhmfl2w" path="res://enemies/dew_wasp/dew_wasp.tscn" id="30_6bu1x"]
+[ext_resource type="Texture2D" uid="uid://dc7prb4jrk6fb" path="res://assets/art/map_intro/2/intro2_1.png" id="30_o55tf"]
+[ext_resource type="Texture2D" uid="uid://8i2qxcn8ct61" path="res://assets/art/map_temple/2/temple2_4.png" id="32_kuhho"]
+[ext_resource type="Texture2D" uid="uid://d2i6v1m4yysbu" path="res://assets/art/map_twilight/ArenaV2/Twilight_Arena_V2_11.png" id="33_46yjt"]
+[ext_resource type="Texture2D" uid="uid://c86tfb3tmkdkc" path="res://assets/art/map_temple/1/temple1_4.png" id="36_v8plf"]
+[ext_resource type="Script" uid="uid://bdper8b5d0x8w" path="res://arena/arena_zone.gd" id="37_2yb08"]
+[ext_resource type="Texture2D" uid="uid://c8reurb5vgt5e" path="res://assets/art/map_temple/3/new_vers/m4_1.png" id="38_gheil"]
+[ext_resource type="Texture2D" uid="uid://ocno7lggkxcd" path="res://assets/art/map_temple/4/m5_6.png" id="41_tkws5"]
+[ext_resource type="Texture2D" uid="uid://cai523igp0i5x" path="res://assets/art/map_temple/transition/ArenaToM3_3.png" id="43_mg3p2"]
+[ext_resource type="Texture2D" uid="uid://d0txt3kgjobqa" path="res://assets/art/map_temple/2/temple2_5.png" id="47_mg3p2"]
+[ext_resource type="PackedScene" uid="uid://cw0p0lbrwwpom" path="res://enemies/rock_mini_boss1/arena_vers/arenarock_mini_boss_1.tscn" id="47_tkws5"]
+[ext_resource type="PackedScene" uid="uid://d0dnp56dnipy6" path="res://enemies/rockling/rockling.tscn" id="48_hye5r"]
+[ext_resource type="PackedScene" uid="uid://ddb4b8y5idamc" path="res://enemies/elderwood_giant/elderwood_giant.tscn" id="48_j5wwi"]
+[ext_resource type="Texture2D" uid="uid://fjgfgk6ylep8" path="res://assets/art/map_temple/3/m4_4.png" id="51_1l34s"]
+[ext_resource type="PackedScene" uid="uid://cbxfw37wvqbfw" path="res://laser/EnvLaser.tscn" id="51_gheil"]
+[ext_resource type="Texture2D" uid="uid://dbb232xb4j5a0" path="res://assets/art/map_intro/transition/intro_trans2.png" id="54_540oo"]
+[ext_resource type="Texture2D" uid="uid://dsax3yvs7wxrd" path="res://assets/art/map_intro/transition/intro_trans1.png" id="55_540oo"]
+[ext_resource type="Texture2D" uid="uid://br8p3nyndvg2" path="res://assets/art/map_intro/3/intro3_part.png" id="55_se3j2"]
+[ext_resource type="Script" uid="uid://bgrq3kcv0miej" path="res://levels/deathbox.gd" id="63_se3j2"]
+[ext_resource type="Script" uid="uid://berl6may11y5e" path="res://levels/checkpoint.gd" id="64_51cs7"]
+[ext_resource type="Script" uid="uid://bqjeopr5d1h8p" path="res://camera/cam_manager.gd" id="64_540oo"]
+[ext_resource type="Script" uid="uid://c42ejmx68jgjt" path="res://dialog/dialogue.gd" id="65_4oj2t"]
+[ext_resource type="Script" uid="uid://c6i0c8aat16cf" path="res://dialog/before_arena.gd" id="66_436f7"]
+[ext_resource type="PackedScene" uid="uid://ck1m7pdonnj1c" path="res://items/dropped_item.tscn" id="66_gbynp"]
+[ext_resource type="Texture2D" uid="uid://d1n84kd3pyb57" path="res://assets/art/gate/gate1.png" id="67_hye5r"]
+[ext_resource type="Texture2D" uid="uid://cpvm6g2w8w0p6" path="res://assets/art/gate/gate2.png" id="68_nupl3"]
+[ext_resource type="Texture2D" uid="uid://g383od6gqdx4" path="res://assets/art/grandpa/grandpa_idle1.png" id="68_ogxtb"]
+[ext_resource type="Texture2D" uid="uid://ce0md2dgvj741" path="res://assets/art/grandpa/grandpa_idle2.png" id="69_4oj2t"]
+[ext_resource type="Texture2D" uid="uid://by7uupe6r4kut" path="res://assets/art/grandpa/grandpa_idle3.png" id="70_gbynp"]
+[ext_resource type="Texture2D" uid="uid://dud20c34fma1c" path="res://assets/art/grandpa/grandpa_idle4.png" id="71_436f7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spbho"]
+atlas = ExtResource("8_sqemd")
+region = Rect2(0, 0, 3840, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vi47"]
+atlas = ExtResource("8_sqemd")
+region = Rect2(3840, 0, 3840, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8hf7"]
+atlas = ExtResource("8_sqemd")
+region = Rect2(7680, 0, 3840, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkxt3"]
+atlas = ExtResource("8_sqemd")
+region = Rect2(0, 2160, 3840, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfkhi"]
+atlas = ExtResource("8_sqemd")
+region = Rect2(3840, 2160, 3840, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuxqr"]
+atlas = ExtResource("8_sqemd")
+region = Rect2(7680, 2160, 3840, 2160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1nlp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spbho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vi47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8hf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkxt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfkhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuxqr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_se3j2"]
+radius = 239.2091
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gheil"]
+radius = 225.42848
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_51cs7"]
+radius = 243.05144
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tkws5"]
+radius = 351.00143
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hye5r"]
+radius = 167.00299
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nupl3"]
+radius = 227.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r36r6"]
+radius = 165.24527
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogxtb"]
+radius = 167.19151
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4oj2t"]
+radius = 133.01503
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gbynp"]
+radius = 220.02045
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_436f7"]
+radius = 326.15335
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5wwi"]
+radius = 388.19067
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gct0l"]
+radius = 195.43797
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbr3m"]
+radius = 392.99872
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tyxqp"]
+radius = 215.23244
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5pll2"]
+radius = 198.02272
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c04xg"]
+radius = 185.87361
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_40vnb"]
+radius = 96.332756
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6gtw"]
+radius = 91.44397
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_100m2"]
+radius = 202.06187
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhe2i"]
+radius = 253.03162
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7q5lu"]
+radius = 97.18539
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyxqp"]
+size = Vector2(2526.5, 2039)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40vnb"]
+size = Vector2(63, 2342)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6gtw"]
+size = Vector2(50, 2533)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_100m2"]
+size = Vector2(83, 2451)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhe2i"]
+size = Vector2(137, 4354.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q5lu"]
+size = Vector2(157, 1916)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rep3d"]
+size = Vector2(78, 598.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma0cq"]
+size = Vector2(150, 1156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gubts"]
+size = Vector2(80, 1392)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08pmg"]
+size = Vector2(104, 2292)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i3x0"]
+size = Vector2(189, 3601.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqemd"]
+size = Vector2(23436.125, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg3p2"]
+size = Vector2(3308.875, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6y4n"]
+size = Vector2(348, 6828)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_540oo"]
+size = Vector2(2670.5, 411.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se3j2"]
+size = Vector2(3184, 498)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51cs7"]
+size = Vector2(154, 2304)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gheil"]
+size = Vector2(4575, 233)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkws5"]
+size = Vector2(418, 559)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hye5r"]
+size = Vector2(3772, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_743bb"]
+size = Vector2(3054, 1510)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pll2"]
+size = Vector2(340, 3967)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c04xg"]
+size = Vector2(238, 3980)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tkjf"]
+size = Vector2(4202.5, 1922.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njno3"]
+size = Vector2(1908, 728.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hxhr"]
+size = Vector2(1684, 654)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muj70"]
+size = Vector2(1949, 1068)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkonu"]
+size = Vector2(556.5, 1130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfi2t"]
+size = Vector2(669, 226)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5wwi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("68_ogxtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_4oj2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_gbynp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_436f7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmxmo"]
+size = Vector2(3579, 2662)
+
+[sub_resource type="Resource" id="Resource_qmxmo"]
+script = ExtResource("4_p87e3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nupl3"]
+size = Vector2(3512, 2662)
+
+[sub_resource type="Resource" id="Resource_540oo"]
+script = ExtResource("4_p87e3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r36r6"]
+size = Vector2(3828, 2659)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogxtb"]
+size = Vector2(4144, 2224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oj2t"]
+size = Vector2(3467, 3012.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbynp"]
+size = Vector2(1487, 3108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_436f7"]
+size = Vector2(3543, 2372)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wwi"]
+size = Vector2(4724.5, 2307)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gct0l"]
+size = Vector2(4670.5, 2576.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbr3m"]
+size = Vector2(4737.5, 2758.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5i0jh"]
+polygon = PackedVector2Array(7628, 992, 11553, 1047, 11556, 1674, 7810, 1751)
+
+[node name="IntroMap" type="CanvasLayer"]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.8566815, 0.8566816, 0.85668147, 1)
+
+[node name="TwilightMap" type="Node2D" parent="."]
+
+[node name="Map" type="Node2D" parent="TwilightMap"]
+
+[node name="BG1" type="Parallax2D" parent="TwilightMap/Map"]
+scroll_scale = Vector2(0.6, 1)
+
+[node name="M1" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+texture = ExtResource("4_gijuy")
+centered = false
+
+[node name="M2" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+position = Vector2(3840.498, 0)
+texture = ExtResource("8_ph0so")
+centered = false
+
+[node name="M1-2Transition2" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+position = Vector2(2750, 0)
+texture = ExtResource("9_okwq5")
+centered = false
+
+[node name="M1-2Transition1" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+position = Vector2(1959.3926, 0)
+texture = ExtResource("9_87123")
+centered = false
+
+[node name="Arena1" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+position = Vector2(4727.6367, -744)
+texture = ExtResource("5_okwq5")
+centered = false
+
+[node name="M2ArenaTransition" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+position = Vector2(2852.913, -744)
+texture = ExtResource("6_wafno")
+centered = false
+
+[node name="ArenaM3Transition" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+visible = false
+position = Vector2(6400.492, -722)
+texture = ExtResource("7_ko7k4")
+centered = false
+
+[node name="M3" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+position = Vector2(8512.348, -744)
+texture = ExtResource("8_ko7k4")
+centered = false
+
+[node name="ArenaM3Transition2" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+position = Vector2(6151.133, -722)
+texture = ExtResource("9_ko7k4")
+centered = false
+
+[node name="M3_2" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+position = Vector2(12352.816, -744)
+texture = ExtResource("10_o6lgv")
+centered = false
+
+[node name="M4_1" type="Sprite2D" parent="TwilightMap/Map/BG1"]
+position = Vector2(10100.259, -2904)
+texture = ExtResource("11_wldth")
+centered = false
+
+[node name="BG2" type="Parallax2D" parent="TwilightMap/Map"]
+scroll_scale = Vector2(0.6, 1)
+
+[node name="M1" type="Sprite2D" parent="TwilightMap/Map/BG2"]
+texture = ExtResource("5_4db0s")
+centered = false
+
+[node name="M2" type="Sprite2D" parent="TwilightMap/Map/BG2"]
+position = Vector2(3839.9998, 0)
+texture = ExtResource("11_6ypvv")
+centered = false
+
+[node name="Arena1" type="Sprite2D" parent="TwilightMap/Map/BG2"]
+position = Vector2(4727.6367, -744)
+texture = ExtResource("8_jyoq1")
+centered = false
+
+[node name="M3" type="Sprite2D" parent="TwilightMap/Map/BG2"]
+visible = false
+position = Vector2(8359.007, -632)
+texture = ExtResource("14_8mojw")
+centered = false
+
+[node name="M4" type="Sprite2D" parent="TwilightMap/Map/BG2"]
+position = Vector2(10100.096, -2904)
+texture = ExtResource("16_8v4jw")
+centered = false
+
+[node name="BG3" type="Parallax2D" parent="TwilightMap/Map"]
+scroll_scale = Vector2(0.775, 1)
+
+[node name="M1" type="Sprite2D" parent="TwilightMap/Map/BG3"]
+texture = ExtResource("6_10y1c")
+centered = false
+
+[node name="M2" type="Sprite2D" parent="TwilightMap/Map/BG3"]
+position = Vector2(2588.7822, 0)
+texture = ExtResource("14_ioqcg")
+centered = false
+
+[node name="Arena1" type="Sprite2D" parent="TwilightMap/Map/BG3"]
+position = Vector2(5553.1426, -744)
+texture = ExtResource("11_sxdhw")
+centered = false
+
+[node name="BG4" type="Parallax2D" parent="TwilightMap/Map"]
+scroll_scale = Vector2(0.8, 1)
+
+[node name="M1Vines" type="Sprite2D" parent="TwilightMap/Map/BG4"]
+texture = ExtResource("7_jxn7f")
+centered = false
+
+[node name="M1Tree" type="Sprite2D" parent="TwilightMap/Map/BG4"]
+texture = ExtResource("7_sqemd")
+centered = false
+
+[node name="M1TreeSpark" type="AnimatedSprite2D" parent="TwilightMap/Map/BG4"]
+modulate = Color(1.1124614, 1.353256, 1.353256, 1)
+position = Vector2(12.389709, -2)
+sprite_frames = SubResource("SpriteFrames_y1nlp")
+autoplay = "default"
+frame = 1
+frame_progress = 0.93436265
+centered = false
+
+[node name="M2" type="Sprite2D" parent="TwilightMap/Map/BG4"]
+visible = false
+position = Vector2(3336.6, 0)
+centered = false
+
+[node name="M2Stone" type="Sprite2D" parent="TwilightMap/Map/BG4"]
+position = Vector2(3550, 0)
+texture = ExtResource("18_yoy8d")
+centered = false
+
+[node name="Arena1" type="Sprite2D" parent="TwilightMap/Map/BG4"]
+visible = false
+position = Vector2(6236.9414, -744)
+texture = ExtResource("16_yoy8d")
+centered = false
+
+[node name="Arena3" type="Sprite2D" parent="TwilightMap/Map/BG4"]
+position = Vector2(6237.416, -523)
+texture = ExtResource("21_qwgot")
+centered = false
+
+[node name="M3" type="Node2D" parent="TwilightMap/Map/BG4"]
+
+[node name="M3" type="Sprite2D" parent="TwilightMap/Map/BG4/M3"]
+position = Vector2(10879.014, -796)
+texture = ExtResource("12_qiql8")
+centered = false
+
+[node name="M3_2" type="Sprite2D" parent="TwilightMap/Map/BG4/M3"]
+position = Vector2(13495.854, -722)
+texture = ExtResource("25_8vasf")
+centered = false
+
+[node name="M4" type="Sprite2D" parent="TwilightMap/Map/BG4"]
+position = Vector2(13341.267, -2904)
+texture = ExtResource("29_sex7d")
+centered = false
+
+[node name="PlayerLayer" type="Parallax2D" parent="TwilightMap/Map"]
+
+[node name="Intro1" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer"]
+position = Vector2(-6321, 478)
+texture = ExtResource("29_4mo8o")
+centered = false
+
+[node name="Intro2" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer"]
+position = Vector2(-3853, 358)
+texture = ExtResource("30_o55tf")
+centered = false
+
+[node name="M1" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer"]
+texture = ExtResource("9_spbho")
+centered = false
+
+[node name="M2Vines" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer"]
+position = Vector2(3840, 0)
+texture = ExtResource("20_qwgot")
+centered = false
+
+[node name="M2Platform" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer"]
+position = Vector2(3840, 0)
+texture = ExtResource("21_3lkf1")
+centered = false
+
+[node name="Arena2" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer"]
+position = Vector2(7680, -744)
+texture = ExtResource("22_3lkf1")
+centered = false
+
+[node name="Arena1" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer"]
+position = Vector2(7680, -744)
+texture = ExtResource("23_t0oce")
+centered = false
+
+[node name="M3" type="Node2D" parent="TwilightMap/Map/PlayerLayer"]
+
+[node name="M3" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer/M3"]
+position = Vector2(12990, -744)
+texture = ExtResource("36_v8plf")
+centered = false
+
+[node name="M3_2" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer/M3"]
+position = Vector2(16826, -744)
+texture = ExtResource("32_kuhho")
+centered = false
+
+[node name="M3_5" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer/M3"]
+position = Vector2(16826, 1416)
+texture = ExtResource("38_gheil")
+centered = false
+
+[node name="outer" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer/M3"]
+position = Vector2(12990, 1415)
+scale = Vector2(1, 2)
+texture = ExtResource("6_t0oce")
+centered = false
+flip_h = true
+
+[node name="M4" type="Node2D" parent="TwilightMap/Map/PlayerLayer"]
+
+[node name="M4_2" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer/M4"]
+position = Vector2(16600, -2904)
+texture = ExtResource("20_6hl8r")
+centered = false
+
+[node name="M4" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer/M4"]
+position = Vector2(16826, -2904)
+texture = ExtResource("41_tkws5")
+centered = false
+
+[node name="outer" type="Sprite2D" parent="TwilightMap/Map/PlayerLayer/M4"]
+position = Vector2(12987, -5064)
+scale = Vector2(1, 2)
+texture = ExtResource("6_t0oce")
+centered = false
+flip_h = true
+flip_v = true
+
+[node name="RealPlayerLayer" type="Parallax2D" parent="TwilightMap/Map"]
+
+[node name="Entities" type="Node2D" parent="TwilightMap/Map/RealPlayerLayer"]
+
+[node name="RockMiniBoss1" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("26_p64k8")]
+position = Vector2(13392, 695)
+
+[node name="Boss1" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("28_743bb")]
+position = Vector2(9851, 107)
+enemy_name = "Boss: Hart of the Forest"
+max_hp = 800.0
+
+[node name="ThornBeetle" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("29_elj26")]
+position = Vector2(12375, 385)
+max_hp = 1500.0
+
+[node name="DewWasp" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("30_6bu1x")]
+position = Vector2(4037.0002, 783)
+scale = Vector2(0.6, 0.6)
+max_hp = 120.0
+
+[node name="ThornBeetle2" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("29_elj26")]
+position = Vector2(-2479, 751)
+
+[node name="RockMiniBoss2" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("26_p64k8")]
+position = Vector2(-943, 1894)
+
+[node name="RockMiniBoss3" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("26_p64k8")]
+position = Vector2(4864, 1152.0001)
+scale = Vector2(1.75, 1.75)
+enemy_name = "Greater Rock Golem"
+max_hp = 250.0
+
+[node name="DewWasp2" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("30_6bu1x")]
+position = Vector2(1414, 1038)
+max_hp = 150.0
+loot_spawn_count = 1
+
+[node name="Rockling" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("48_hye5r")]
+position = Vector2(17202, 926)
+
+[node name="ArenaRockMiniBoss4" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("47_tkws5")]
+position = Vector2(20208, -2289)
+scale = Vector2(2.4, 2.4)
+enemy_name = "Boss: Greater Rock Golem"
+max_hp = 1300.0
+loot_spawn_count = 4
+
+[node name="ElderwoodGiant" parent="TwilightMap/Map/RealPlayerLayer/Entities" instance=ExtResource("48_j5wwi")]
+position = Vector2(18402, 2960)
+
+[node name="Lasers" type="Node2D" parent="TwilightMap/Map/RealPlayerLayer"]
+
+[node name="EnvLaser" parent="TwilightMap/Map/RealPlayerLayer/Lasers" instance=ExtResource("51_gheil")]
+position = Vector2(10790, -38)
+rotation = 2.2287855
+
+[node name="EnvLaser2" parent="TwilightMap/Map/RealPlayerLayer/Lasers" instance=ExtResource("51_gheil")]
+position = Vector2(9569, 1029)
+rotation = -2.0420353
+fire_duration = 3.0
+cooldown = 4.0
+
+[node name="Player" parent="TwilightMap/Map/RealPlayerLayer" instance=ExtResource("2_mwbsy")]
+position = Vector2(-5706, 1283)
+
+[node name="PointLight2D" type="PointLight2D" parent="TwilightMap/Map/RealPlayerLayer/Player"]
+visible = false
+color = Color(0.34820014, 0.40054685, 1.353256, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.5)
+texture = ExtResource("25_7gkxj")
+texture_scale = 4.0
+
+[node name="BG7" type="Parallax2D" parent="TwilightMap/Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="TwilightMap/Map/BG7"]
+position = Vector2(-2, 0)
+texture = ExtResource("9_sqemd")
+centered = false
+
+[node name="Arena1" type="Sprite2D" parent="TwilightMap/Map/BG7"]
+position = Vector2(7522, -632)
+texture = ExtResource("25_3lkf1")
+centered = false
+
+[node name="Arena4" type="Sprite2D" parent="TwilightMap/Map/BG7"]
+position = Vector2(7798, -744)
+texture = ExtResource("33_46yjt")
+centered = false
+
+[node name="ArenaM3Trans" type="Sprite2D" parent="TwilightMap/Map/BG7"]
+position = Vector2(12541, 336)
+texture = ExtResource("43_mg3p2")
+
+[node name="IntroTwilightTrans" type="Sprite2D" parent="TwilightMap/Map/BG7"]
+position = Vector2(43, 1080)
+texture = ExtResource("54_540oo")
+
+[node name="Intro1To2" type="Sprite2D" parent="TwilightMap/Map/BG7"]
+position = Vector2(-3022, 1438)
+texture = ExtResource("55_540oo")
+
+[node name="BG8" type="Parallax2D" parent="TwilightMap/Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="TwilightMap/Map/BG8"]
+texture = ExtResource("55_se3j2")
+centered = false
+
+[node name="BG9" type="Parallax2D" parent="TwilightMap/Map"]
+scroll_scale = Vector2(1.1, 1)
+scroll_offset = Vector2(750, 0)
+
+[node name="Arena1" type="Sprite2D" parent="TwilightMap/Map/BG9"]
+position = Vector2(7680, -744)
+texture = ExtResource("27_t0oce")
+centered = false
+
+[node name="Arena2" type="Sprite2D" parent="TwilightMap/Map/BG9"]
+position = Vector2(4311, -1682)
+texture = ExtResource("6_t0oce")
+centered = false
+
+[node name="Arena3" type="Sprite2D" parent="TwilightMap/Map/BG9"]
+position = Vector2(7505.02, 1416)
+texture = ExtResource("6_t0oce")
+centered = false
+
+[node name="M3" type="Sprite2D" parent="TwilightMap/Map/BG9"]
+position = Vector2(16945.123, -722)
+texture = ExtResource("47_mg3p2")
+centered = false
+
+[node name="M3_2" type="Sprite2D" parent="TwilightMap/Map/BG9"]
+position = Vector2(17808.752, 1438)
+texture = ExtResource("51_1l34s")
+centered = false
+
+[node name="Interactables" type="Node2D" parent="TwilightMap"]
+
+[node name="Springs" type="Node2D" parent="TwilightMap/Interactables"]
+visible = false
+
+[node name="M3Cave" type="Area2D" parent="TwilightMap/Interactables/Springs"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("13_spbho")
+spring_strength = -3000.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TwilightMap/Interactables/Springs/M3Cave"]
+polygon = PackedVector2Array(19927, 3272, 19906, 3215, 19943, 3110, 19971, 3087, 19951, 3051, 19977, 2980, 20052, 2923, 20131, 2900, 20218, 2913, 20229, 2940, 20084, 3006, 20123, 3123, 19948, 3271)
+
+[node name="MidSprings" type="Area2D" parent="TwilightMap/Interactables/Springs"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("20_6ypvv")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TwilightMap/Interactables/Springs/MidSprings"]
+position = Vector2(2, 0)
+polygon = PackedVector2Array(3059, 2135, 3078, 2105, 3100, 2092, 3138, 2082, 3165, 2087, 3180, 2094, 3191, 2072, 3212, 2056, 3231, 2044, 3253, 2036, 3288, 2030, 3336, 2035, 3373, 2053, 3397, 2079, 3404, 2095, 3405, 2105, 3391, 2107)
+
+[node name="LowSprings" type="Area2D" parent="TwilightMap/Interactables/Springs"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("13_spbho")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TwilightMap/Interactables/Springs/LowSprings"]
+polygon = PackedVector2Array(1185, 1864, 1186, 1858, 1191, 1849, 1218, 1833, 1235, 1828, 1254, 1824, 1288, 1828, 1309, 1839, 1321, 1851, 1323, 1859, 1322, 1861)
+
+[node name="Deathboxes" type="Node2D" parent="TwilightMap/Interactables"]
+
+[node name="D1" type="Area2D" parent="TwilightMap/Interactables/Deathboxes"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("63_se3j2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(-3214, 2308)
+shape = SubResource("CircleShape2D_se3j2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(-2118, 2383)
+shape = SubResource("CircleShape2D_gheil")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(-2558, 2518)
+shape = SubResource("CircleShape2D_51cs7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(282, 1910)
+shape = SubResource("CircleShape2D_tkws5")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(676, 2045)
+shape = SubResource("CircleShape2D_hye5r")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(2315, 2061)
+shape = SubResource("CircleShape2D_hye5r")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(1963, 2045)
+shape = SubResource("CircleShape2D_nupl3")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(1239, 590)
+shape = SubResource("CircleShape2D_r36r6")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(3583, 2088)
+shape = SubResource("CircleShape2D_ogxtb")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(2908, 2160)
+shape = SubResource("CircleShape2D_4oj2t")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(13341, 95)
+shape = SubResource("CircleShape2D_gbynp")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(14087, 1238)
+shape = SubResource("CircleShape2D_436f7")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(15239, 1198)
+shape = SubResource("CircleShape2D_j5wwi")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(20542, 358)
+shape = SubResource("CircleShape2D_j5wwi")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(19423, 1182)
+shape = SubResource("CircleShape2D_gct0l")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(20719, 961)
+shape = SubResource("CircleShape2D_cbr3m")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(17210, -763)
+shape = SubResource("CircleShape2D_tyxqp")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(18027, -2033)
+shape = SubResource("CircleShape2D_5pll2")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(18207, -1831)
+shape = SubResource("CircleShape2D_c04xg")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(17818, -2202)
+shape = SubResource("CircleShape2D_40vnb")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(17741, -2339)
+shape = SubResource("CircleShape2D_t6gtw")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(18161, -2832)
+shape = SubResource("CircleShape2D_100m2")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(18357, -2789)
+shape = SubResource("CircleShape2D_xhe2i")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="TwilightMap/Interactables/Deathboxes/D1"]
+position = Vector2(1050, 716)
+shape = SubResource("CircleShape2D_7q5lu")
+
+[node name="Checkpoints" type="Node2D" parent="TwilightMap/Interactables"]
+
+[node name="C1" type="Area2D" parent="TwilightMap/Interactables/Checkpoints"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("64_51cs7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Interactables/Checkpoints/C1"]
+position = Vector2(-5190.25, 1238)
+shape = SubResource("RectangleShape2D_tyxqp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TwilightMap/Interactables/Checkpoints/C1"]
+position = Vector2(195.5, 1161)
+shape = SubResource("RectangleShape2D_40vnb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TwilightMap/Interactables/Checkpoints/C1"]
+position = Vector2(3953, 1257)
+shape = SubResource("RectangleShape2D_t6gtw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TwilightMap/Interactables/Checkpoints/C1"]
+position = Vector2(7483, 644)
+shape = SubResource("RectangleShape2D_100m2")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TwilightMap/Interactables/Checkpoints/C1"]
+position = Vector2(12567, 748.25)
+shape = SubResource("RectangleShape2D_xhe2i")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TwilightMap/Interactables/Checkpoints/C1"]
+position = Vector2(17290.5, 500)
+shape = SubResource("RectangleShape2D_7q5lu")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="TwilightMap/Interactables/Checkpoints/C1"]
+position = Vector2(17576, -2603.875)
+shape = SubResource("RectangleShape2D_rep3d")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="TwilightMap/Interactables/Checkpoints/C1"]
+position = Vector2(19167, -1353)
+shape = SubResource("RectangleShape2D_ma0cq")
+
+[node name="Dialog" type="Node2D" parent="TwilightMap/Interactables"]
+
+[node name="Intro" type="Area2D" parent="TwilightMap/Interactables/Dialog"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("65_4oj2t")
+dialogue_string = "intro"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Interactables/Dialog/Intro"]
+position = Vector2(-5234, 1170)
+shape = SubResource("RectangleShape2D_gubts")
+
+[node name="Tree" type="Area2D" parent="TwilightMap/Interactables/Dialog"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("65_4oj2t")
+dialogue_string = "tutorial1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Interactables/Dialog/Tree"]
+position = Vector2(-171, 1426)
+shape = SubResource("RectangleShape2D_08pmg")
+
+[node name="BeforeArena" type="Area2D" parent="TwilightMap/Interactables/Dialog"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("66_436f7")
+dialogue_string = "before_arena"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Interactables/Dialog/BeforeArena"]
+position = Vector2(6930, 714.75)
+shape = SubResource("RectangleShape2D_3i3x0")
+
+[node name="Bounds" type="Node2D" parent="TwilightMap"]
+
+[node name="Arena1Gate" type="StaticBody2D" parent="TwilightMap/Bounds"]
+
+[node name="Floor" type="StaticBody2D" parent="TwilightMap/Bounds" groups=["spikable_group"]]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+position = Vector2(-13, -25)
+polygon = PackedVector2Array(10, 1473, 162, 1507, 179, 1510, 257, 1455, 569, 1471, 374, 1597, 270, 1708, 13, 1824)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(745, 2158, 800, 1905, 1041, 1875, 1045, 1973, 1071, 2095, 1058, 2163)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+position = Vector2(1, 0)
+polygon = PackedVector2Array(1050, 1973, 1084, 1934, 1232, 1886, 1272, 1883, 1351, 1919, 1407, 1798, 1472, 1675, 1495, 1632, 1504, 1514, 1531, 1462, 1586, 1430, 1652, 1312, 1887, 1313, 1859, 1354, 1856, 1420, 1867, 1471, 1862, 1523, 1824, 1574, 1854, 1619, 1880, 1768, 1815, 1938, 1822, 1996, 1663, 2160, 1367, 2152, 1316, 1936, 1211, 1932, 1093, 1997, 1077, 2087)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(2444, 1209, 2463, 1760, 2429, 1859, 2409, 1874, 2377, 2161, 2858, 2163, 2778, 1903, 2741, 1868, 2729, 1739, 2708, 1698, 2685, 1417, 2641, 1332, 2610, 1192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Bounds/Floor"]
+position = Vector2(10401, 1080)
+shape = SubResource("RectangleShape2D_sqemd")
+disabled = true
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+position = Vector2(7, 2)
+polygon = PackedVector2Array(3608, 2160, 3648, 2032, 3664, 1800, 3640, 1648, 3696, 1360, 3696, 1312, 3724, 1290, 3843, 1287, 3931, 1319, 5320, 1360, 5408, 1487, 5444, 1488, 5436, 1835, 4856, 2184)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(5440, 1838, 5861, 1660, 6114, 1513, 6157, 1497, 6263, 1456, 6289, 1444, 6526, 1294, 6701, 1172, 6733, 1144, 6783, 1119, 6835, 1112, 6878, 1097, 7020, 1040, 7194, 927, 7297, 851, 7342, 820, 7371, 801, 7381, 793, 7389, 787, 7570, 791, 7682, 789, 7368, 1318, 5921, 2217)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(7683, 788, 7844, 813, 8938, 843, 8977, 855, 11522, 848, 11522, 1344, 7562, 989)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(8461, 133, 8537, 94, 8706, 57, 8973, 32, 9231, 46, 9286, 73, 9277, 109, 9186, 250, 8973, 290, 8754, 304, 8666, 296, 8547, 219)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(2991, 1027, 2922, 606, 3136, 502, 3540, 335, 3616, -5, 3840, -14, 3847, 450, 3621, 689, 3273, 681, 3121, 774, 3070, 785, 3021, 1032, 2994, 1030)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(2217, 405, 1948, 321, 1725, 337, 1692, 422, 1881, 477, 1982, 579, 2083, 624, 2166, 745, 2210, 744)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+position = Vector2(12, -31)
+polygon = PackedVector2Array(251, 598, 418, 638, 597, 642, 1037, 599, 1060, 525, 1060, 465, 1091, 367, 1086, 263, 1204, 263, 1260, 539, 1225, 599, 785, 831, 203, 893, -69, 923, -38, 600)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(264, 575, 461, 272, 594, 197, 713, 220, 1194, 46, 7055, 103, 7647, 219, 8180, -75, 8140, -650, 4776, -710, 2, -210, -18, 575, 257, 565)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(7921, -525, 11328, -490, 11321, -397, 11361, -255, 11408, -54, 11439, -33, 11481, -34, 11744, -154, 12112, -158, 12517, 5, 12742, -2, 13142, 263, 13243, 153, 13281, 13, 13263, -852, 7909, -818)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(11376, 270, 11299, 624, 11661, 1460, 13855, 1481, 13769, 923, 13326, 775, 12995, 601, 12536, 533, 11844, 238, 11698, 208)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(13276, -660, 13702, -653, 13861, -599, 14123, -569, 14187, -484, 14349, -433, 14401, -361, 14374, 15, 14494, 192, 14554, 262, 14592, 335, 14587, 380, 14843, 541, 14954, 244, 14989, 190, 15021, 73, 14978, -188, 15069, -379, 14697, -527, 14552, -742, 13240, -749, 13236, -655)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(13725, 912, 13755, 784, 13752, 576, 13791, 449, 13948, 424, 13966, 741, 14041, 738, 14076, 686, 14120, 620, 14102, 682, 14044, 828, 13994, 967, 14014, 1347, 14286, 1324, 14336, 1083, 14795, 1087, 14861, 961, 14954, 950, 15259, 1232, 15309, 979, 15419, 702, 15563, 645, 15603, 654, 15562, 801, 15604, 797, 15638, 792, 15638, 855, 15613, 951, 15556, 1056, 15589, 1165, 15541, 1472, 13673, 1466)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(19379, 903, 19287, 888, 18824, 1086, 18301, 1086, 18206, 1050, 18182, 975, 18157, 951, 18009, 960, 17895, 1014, 17844, 1073, 17752, 1072, 17578, 1167, 17502, 1185, 17149, 1170, 17038, 1130, 16844, 1188, 16743, 1203, 16556, 1251, 16511, 1250, 16272, 1319, 15809, 1323, 15679, 1297, 15561, 1252, 15515, 1503, 19424, 1581, 19440, 1231, 19425, 1008)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(17733, 257, 18235, 111, 18610, 119, 19867, -219, 20040, -361, 20702, -583, 20684, 1509, 20633, 1498, 20636, 736, 20377, 217, 20035, 451, 19651, 434, 19361, 465, 19028, 566, 18553, 511, 18029, 505)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(15430, -740, 15635, -627, 15786, -589, 15878, -513, 16084, -497, 16480, -284, 16583, -320, 16836, -140, 16962, -217, 17286, -258, 17493, -371, 17884, -338, 18106, -231, 18561, -244, 18714, -375, 18585, -345, 18502, -339, 18764, -553, 19109, -514, 19318, -628, 19587, -674, 19681, -692, 19752, -743)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TwilightMap/Bounds/Floor"]
+position = Vector2(18026.563, -744)
+shape = SubResource("RectangleShape2D_mg3p2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TwilightMap/Bounds/Floor"]
+position = Vector2(20808, 402)
+shape = SubResource("RectangleShape2D_m6y4n")
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(13173, -385, 13455, -310, 13712, -292, 13996, -293, 14076, -273, 14059, -115, 13744, 60, 13644, 76, 13248, 17)
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+position = Vector2(0, -2)
+polygon = PackedVector2Array(20585, 1431, 20575, 1696, 20582, 2507, 20345, 2633, 20184, 3112, 19971, 3274, 18845, 3337, 17892, 3409, 17649, 2620, 17538, 2865, 17584, 3375, 17304, 3355, 17052, 2975, 17007, 2641, 17110, 2058, 17447, 1637, 18557, 1601, 18698, 1643, 18869, 1778, 18924, 1959, 18351, 2024, 18425, 2091, 18651, 2076, 18994, 2198, 19175, 2299, 19222, 1973, 19438, 1496, 16763, 1528, 16723, 3908, 21198, 3916, 21041, 1435)
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(19753, -743, 19749, -775, 19463, -850, 19119, -934, 19094, -926, 18938, -1083, 18723, -1134, 18655, -1094, 18594, -1061, 18469, -1063, 18347, -1170, 18235, -1314, 18118, -1318, 17738, -1252, 17512, -1089, 17410, -930, 17355, -746)
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(16977, -780, 17102, -955, 17132, -1066, 16981, -1073, 16960, -1119, 16942, -1224, 17026, -1353, 17100, -1395, 17158, -1603, 17003, -1716, 16963, -1998, 16981, -2364, 16981, -2520, 17087, -2465, 17232, -2421, 17207, -2471, 17108, -2500, 17080, -2537, 17000, -2607, 17009, -2743, 17303, -2806, 18039, -2806, 18419, -2765, 18467, -2430, 18589, -2281, 18636, -2339, 18692, -2667, 19142, -2816, 19808, -2866, 19806, -2905, 19077, -2901, 18752, -2922, 16749, -2974, 16802, -702)
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(17699, -2485, 17471, -2451, 17458, -2263, 17385, -2112, 17314, -2081, 17347, -1839, 17503, -1735, 17516, -1549, 17573, -1509, 17873, -1659, 17930, -1726, 18175, -1726, 18367, -1702, 18606, -1622, 18893, -1673, 19163, -1660, 19405, -1771, 19542, -1725, 19884, -1726, 19959, -1670, 20184, -1686, 20258, -1583, 20253, -1505, 20434, -1343, 20679, -1327, 20663, -2223, 20647, -2222, 20470, -2109, 19966, -2015, 19411, -1995, 19016, -2109, 19009, -2193, 18601, -1827, 18303, -1860, 17930, -2040, 17721, -2421)
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Floor"]
+polygon = PackedVector2Array(19807, -2865, 20523, -2836, 20653, -2210, 20698, -2201, 20703, -3006, 19803, -2911)
+
+[node name="Intro1" type="StaticBody2D" parent="TwilightMap/Bounds" groups=["spikable_group"]]
+collision_layer = 2
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TwilightMap/Bounds/Intro1"]
+position = Vector2(-5065.25, 1861.25)
+shape = SubResource("RectangleShape2D_540oo")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TwilightMap/Bounds/Intro1"]
+position = Vector2(-5132, 703)
+shape = SubResource("RectangleShape2D_se3j2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Bounds/Intro1"]
+position = Vector2(-6321, 1238)
+shape = SubResource("RectangleShape2D_51cs7")
+
+[node name="Intro2" type="StaticBody2D" parent="TwilightMap/Bounds" groups=["spikable_group"]]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Intro2"]
+position = Vector2(-13, -12)
+polygon = PackedVector2Array(-3717, 1668, -3482, 1740, -3287, 1761, -3121, 1945, -3059, 1948, -3070, 2011, -3204, 2092, -3812, 2014)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Intro2"]
+polygon = PackedVector2Array(-3154, 2520, -3029, 2392, -3012, 2315, -2927, 2273, -2866, 2149, -2675, 2077, -2586, 2063, -2494, 2002, -2406, 1994, -2511, 2071, -2514, 2146, -2540, 2193, -2558, 2345, -2561, 2480, -2593, 2571)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Intro2"]
+polygon = PackedVector2Array(-2082, 2079, -1608, 2115, -1216, 2006, -879, 2039, -807, 1912, -750, 1886, -686, 1758, -428, 1631, -200, 1494, -4, 1442, -13, 2733, -1732, 2530, -2021, 2187, -2062, 2143)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Intro2"]
+polygon = PackedVector2Array(-3652, 1078, -3474, 1066, -3276, 1132, -2845, 1031, -2762, 1063, -2611, 1019, -2272, 1042, -2016, 1337, -1798, 1357, -1690, 1442, -1545, 1435, -1413, 1621, -1358, 1754, -974, 1483, -771, 1207, -1752, 943, -2553, 846, -2844, 712, -3330, 705, -3174, 535, -3068, 483, -2459, 438, -2326, 500, -2088, 469, -1166, 683, -588, 774, -199, 865, 13, 1089, -14, 180, -3797, 238)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Bounds/Intro2"]
+position = Vector2(-2297, 2518)
+shape = SubResource("RectangleShape2D_gheil")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TwilightMap/Bounds/Intro2"]
+position = Vector2(-3691, 2283.5)
+shape = SubResource("RectangleShape2D_tkws5")
+
+[node name="Twilight1" type="StaticBody2D" parent="TwilightMap/Bounds" groups=["spikable_group"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Bounds/Twilight1"]
+position = Vector2(1876, 2211.5)
+shape = SubResource("RectangleShape2D_hye5r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Twilight1"]
+polygon = PackedVector2Array(6537, 523, 6527, 636, 6903, 558, 7062, 425, 7113, 118, 6826, 67, 6805, 381)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TwilightMap/Bounds/Twilight1"]
+polygon = PackedVector2Array(5881, 864, 5900, 635, 6039, 332, 5822, -55, 5221, 44, 5613, 405, 5741, 923)
+
+[node name="Items" type="Node2D" parent="TwilightMap"]
+
+[node name="DroppedItem" parent="TwilightMap/Items" instance=ExtResource("66_gbynp")]
+position = Vector2(-4889, 1606)
+
+[node name="DroppedItem2" parent="TwilightMap/Items" instance=ExtResource("66_gbynp")]
+position = Vector2(-2857, 630)
+
+[node name="DroppedItem3" parent="TwilightMap/Items" instance=ExtResource("66_gbynp")]
+position = Vector2(17030, -1132)
+
+[node name="DroppedItem4" parent="TwilightMap/Items" instance=ExtResource("66_gbynp")]
+position = Vector2(17498, 3314)
+
+[node name="DroppedItem5" parent="TwilightMap/Items" instance=ExtResource("66_gbynp")]
+position = Vector2(17340, 3248)
+
+[node name="DroppedItem6" parent="TwilightMap/Items" instance=ExtResource("66_gbynp")]
+position = Vector2(13497, -377)
+
+[node name="DroppedItem7" parent="TwilightMap/Items" instance=ExtResource("66_gbynp")]
+position = Vector2(558, 514)
+
+[node name="DroppedItem8" parent="TwilightMap/Items" instance=ExtResource("66_gbynp")]
+position = Vector2(3272, 368)
+
+[node name="DroppedItem9" parent="TwilightMap/Items" instance=ExtResource("66_gbynp")]
+position = Vector2(20283, -682)
+
+[node name="ArenaZones" type="Node2D" parent="TwilightMap"]
+
+[node name="Arena1" type="Node2D" parent="TwilightMap/ArenaZones"]
+
+[node name="Zone1" type="Area2D" parent="TwilightMap/ArenaZones/Arena1" node_paths=PackedStringArray("boss", "gate")]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("37_2yb08")
+arena_num = 1
+boss = NodePath("../../../Map/RealPlayerLayer/Entities/Boss1")
+gate = NodePath("../A1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/ArenaZones/Arena1/Zone1"]
+position = Vector2(9826, 392)
+shape = SubResource("RectangleShape2D_743bb")
+
+[node name="A1" type="StaticBody2D" parent="TwilightMap/ArenaZones/Arena1"]
+collision_layer = 2
+collision_mask = 12
+
+[node name="L" type="CollisionShape2D" parent="TwilightMap/ArenaZones/Arena1/A1"]
+position = Vector2(8078, 536)
+shape = SubResource("RectangleShape2D_5pll2")
+
+[node name="R" type="CollisionShape2D" parent="TwilightMap/ArenaZones/Arena1/A1"]
+position = Vector2(11475, 620)
+shape = SubResource("RectangleShape2D_c04xg")
+
+[node name="SpriteL" type="Sprite2D" parent="TwilightMap/ArenaZones/Arena1/A1"]
+position = Vector2(7763, 610)
+texture = ExtResource("67_hye5r")
+
+[node name="SpriteR" type="Sprite2D" parent="TwilightMap/ArenaZones/Arena1/A1"]
+position = Vector2(11702, 441)
+texture = ExtResource("68_nupl3")
+flip_h = true
+
+[node name="Arena2" type="Node2D" parent="TwilightMap/ArenaZones"]
+
+[node name="Zone2" type="Area2D" parent="TwilightMap/ArenaZones/Arena2" node_paths=PackedStringArray("boss", "gate")]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("37_2yb08")
+arena_num = 2
+boss = NodePath("../../../Map/RealPlayerLayer/Entities/ElderwoodGiant")
+gate = NodePath("../A2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/ArenaZones/Arena2/Zone2"]
+position = Vector2(18606.75, 2686.25)
+shape = SubResource("RectangleShape2D_0tkjf")
+
+[node name="A2" type="StaticBody2D" parent="TwilightMap/ArenaZones/Arena2"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="TwilightMap/ArenaZones/Arena2/A2"]
+position = Vector2(20460, 1229)
+rotation = 1.5707964
+texture = ExtResource("67_hye5r")
+flip_h = true
+
+[node name="A2" type="CollisionShape2D" parent="TwilightMap/ArenaZones/Arena2/A2"]
+position = Vector2(20304, 1181.25)
+shape = SubResource("RectangleShape2D_njno3")
+
+[node name="A2_2" type="CollisionShape2D" parent="TwilightMap/ArenaZones/Arena2/A2"]
+position = Vector2(20845, 1455.9999)
+rotation = 0.31415927
+shape = SubResource("RectangleShape2D_3hxhr")
+
+[node name="Arena3" type="Node2D" parent="TwilightMap/ArenaZones"]
+
+[node name="Zone3" type="Area2D" parent="TwilightMap/ArenaZones/Arena3" node_paths=PackedStringArray("boss", "gate")]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("37_2yb08")
+arena_num = 3
+boss = NodePath("../../../Map/RealPlayerLayer/Entities/ArenaRockMiniBoss4")
+gate = NodePath("../A3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/ArenaZones/Arena3/Zone3"]
+position = Vector2(19949.5, -2522)
+shape = SubResource("RectangleShape2D_muj70")
+
+[node name="A3" type="StaticBody2D" parent="TwilightMap/ArenaZones/Arena3"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="TwilightMap/ArenaZones/Arena3/A3"]
+position = Vector2(18313, -2343)
+texture = ExtResource("68_nupl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/ArenaZones/Arena3/A3"]
+position = Vector2(18365, -2355)
+shape = SubResource("RectangleShape2D_lkonu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TwilightMap/ArenaZones/Arena3/A3"]
+position = Vector2(18777, -1933)
+shape = SubResource("RectangleShape2D_qfi2t")
+
+[node name="NPC" type="Node2D" parent="TwilightMap"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TwilightMap/NPC"]
+position = Vector2(-5142, 1590)
+sprite_frames = SubResource("SpriteFrames_j5wwi")
+autoplay = "default"
+frame_progress = 0.27536914
+
+[node name="Camera" type="Node" parent="TwilightMap"]
+
+[node name="CameraManager" type="Node" parent="TwilightMap/Camera" node_paths=PackedStringArray("zones", "pcams", "default_pcam")]
+script = ExtResource("64_540oo")
+zones = [NodePath("../CameraZones/Z0"), NodePath("../CameraZones/Z1"), NodePath("../CameraZones/Z2"), NodePath("../CameraZones/Z3"), NodePath("../CameraZones/Arena1"), NodePath("../CameraZones/Z5"), NodePath("../CameraZones/Z6"), NodePath("../CameraZones/Z7"), NodePath("../CameraZones/Z8"), NodePath("../CameraZones/Z9")]
+pcams = [NodePath("../CameraZones/Z0/PCam0"), NodePath("../CameraZones/Z1/PCam1"), NodePath("../CameraZones/Z2/PCam2"), NodePath("../CameraZones/Z3/PCam3"), NodePath("../CameraZones/Arena1/Arena1Cam"), NodePath("../CameraZones/Z5/PCam5"), NodePath("../CameraZones/Z6/PCam6"), NodePath("../CameraZones/Z7/PCam7"), NodePath("../CameraZones/Z8/PCam8"), NodePath("../CameraZones/Z9/PCam9")]
+default_pcam = NodePath("../CameraZones/Z0/PCam0")
+
+[node name="CameraZones" type="StaticBody2D" parent="TwilightMap/Camera"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="Z0" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z0"]
+position = Vector2(-5207.5, 1319)
+shape = SubResource("RectangleShape2D_qmxmo")
+
+[node name="PCam0" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z0" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+zoom = Vector2(2, 2)
+tween_resource = SubResource("Resource_qmxmo")
+follow_damping = true
+draw_limits = true
+limit_left = -6200
+limit_bottom = 1900
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Z1" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z1"]
+position = Vector2(-1662, 1319)
+shape = SubResource("RectangleShape2D_nupl3")
+
+[node name="PCam1" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z1" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+zoom = Vector2(1.65, 1.65)
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_top = 500
+limit_bottom = 2500
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Z2" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z2"]
+position = Vector2(2008, 1318.5)
+shape = SubResource("RectangleShape2D_r36r6")
+
+[node name="PCam2" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z2" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+zoom = Vector2(1.3, 1.3)
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_top = 40
+limit_bottom = 2250
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Z3" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z3"]
+position = Vector2(5994, 1087)
+shape = SubResource("RectangleShape2D_ogxtb")
+
+[node name="PCam3" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z3" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+zoom = Vector2(1.25, 1.25)
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_top = 100
+limit_bottom = 2000
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Arena1" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Arena1"]
+position = Vector2(9799.5, 696.25)
+shape = SubResource("RectangleShape2D_4oj2t")
+
+[node name="Arena1Cam" type="Node2D" parent="TwilightMap/Camera/CameraZones/Arena1" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+zoom = Vector2(1.1, 1.1)
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_top = -700
+limit_bottom = 1400
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Z5" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z5"]
+position = Vector2(12276.5, 630)
+shape = SubResource("RectangleShape2D_gbynp")
+
+[node name="PCam5" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z5" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+zoom = Vector2(1.5, 1.5)
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_top = -600
+limit_bottom = 1300
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Z6" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z6"]
+position = Vector2(14791.5, 251)
+shape = SubResource("RectangleShape2D_436f7")
+
+[node name="PCam6" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z6" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+zoom = Vector2(1.25, 1.25)
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_top = -700
+limit_bottom = 1460
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Z7" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z7"]
+position = Vector2(18925.25, 249)
+shape = SubResource("RectangleShape2D_j5wwi")
+
+[node name="PCam7" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z7" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_top = -2800
+limit_right = 20600
+limit_bottom = 1500
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Z8" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z8"]
+position = Vector2(18975.25, 2690.75)
+shape = SubResource("RectangleShape2D_gct0l")
+
+[node name="PCam8" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z8" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+zoom = Vector2(1.4, 1.4)
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_left = 16700
+limit_right = 20600
+limit_bottom = 3550
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Z9" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z9"]
+position = Vector2(18901.25, -2283.75)
+shape = SubResource("RectangleShape2D_cbr3m")
+
+[node name="PCam9" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z9" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+zoom = Vector2(1.25, 1.25)
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_left = 16650
+limit_top = -2900
+limit_right = 20600
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Z10" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z10"]
+position = Vector2(12276.5, 630)
+
+[node name="PCam8" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z10" node_paths=PackedStringArray("follow_target")]
+visible = false
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_top = 500
+limit_bottom = 2500
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Z11" type="Area2D" parent="TwilightMap/Camera/CameraZones"]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwilightMap/Camera/CameraZones/Z11"]
+position = Vector2(12276.5, 630)
+
+[node name="PCam8" type="Node2D" parent="TwilightMap/Camera/CameraZones/Z11" node_paths=PackedStringArray("follow_target")]
+visible = false
+top_level = true
+position = Vector2(-5706, 1283)
+script = ExtResource("3_hoi5d")
+follow_mode = 1
+follow_target = NodePath("../../../../Map/RealPlayerLayer/Player")
+tween_resource = SubResource("Resource_540oo")
+follow_damping = true
+draw_limits = true
+limit_top = 500
+limit_bottom = 2500
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TwilightMap"]
+visible = false
+position = Vector2(-108, -198)
+occluder = SubResource("OccluderPolygon2D_5i0jh")
+
+[connection signal="body_entered" from="TwilightMap/Interactables/Springs/M3Cave" to="TwilightMap/Interactables/Springs/M3Cave" method="_on_body_entered"]
+[connection signal="body_entered" from="TwilightMap/Interactables/Springs/MidSprings" to="TwilightMap/Interactables/Springs/MidSprings" method="_on_body_entered"]
+[connection signal="body_entered" from="TwilightMap/Interactables/Springs/LowSprings" to="TwilightMap/Interactables/Springs/LowSprings" method="_on_body_entered"]
+[connection signal="body_entered" from="TwilightMap/Interactables/Deathboxes/D1" to="TwilightMap/Interactables/Deathboxes/D1" method="_on_body_entered"]
+[connection signal="body_entered" from="TwilightMap/Interactables/Checkpoints/C1" to="TwilightMap/Interactables/Checkpoints/C1" method="_on_body_entered"]
+[connection signal="body_entered" from="TwilightMap/Interactables/Dialog/Intro" to="TwilightMap/Interactables/Dialog/Intro" method="_on_body_entered"]
+[connection signal="body_entered" from="TwilightMap/Interactables/Dialog/Tree" to="TwilightMap/Interactables/Dialog/Tree" method="_on_body_entered"]
+[connection signal="body_entered" from="TwilightMap/Interactables/Dialog/BeforeArena" to="TwilightMap/Interactables/Dialog/BeforeArena" method="_on_body_entered"]
+[connection signal="body_entered" from="TwilightMap/Camera/CameraZones/Z0" to="TwilightMap/Camera/CameraManager" method="_on_z_0_body_entered"]
+[connection signal="body_exited" from="TwilightMap/Camera/CameraZones/Z0" to="TwilightMap/Camera/CameraManager" method="_on_z_0_body_exited"]
+[connection signal="body_entered" from="TwilightMap/Camera/CameraZones/Z1" to="TwilightMap/Camera/CameraManager" method="_on_z_1_body_entered"]
+[connection signal="body_exited" from="TwilightMap/Camera/CameraZones/Z1" to="TwilightMap/Camera/CameraManager" method="_on_z_1_body_exited"]

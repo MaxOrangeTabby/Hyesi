@@ -1,0 +1,346 @@
+[gd_scene load_steps=20 format=3 uid="uid://b5pf4b33qu6h6"]
+
+[ext_resource type="Texture2D" uid="uid://dvmmqektgpwd2" path="res://assets/art/cel_spike/ui/cel_spike_icon.png" id="1_myw55"]
+[ext_resource type="Script" uid="uid://dh8olqhsfhb1x" path="res://in_game/in_game_ui.gd" id="1_ttrpu"]
+[ext_resource type="Script" uid="uid://bnvr1s0jks8d1" path="res://in_game/player_hp_bar.gd" id="2_4qou2"]
+[ext_resource type="FontFile" uid="uid://diq6axmltqej2" path="res://assets/fonts/BeaufortForLoL-OTF/BeaufortforLOL-Bold.otf" id="2_s8ks3"]
+[ext_resource type="Texture2D" uid="uid://byashbytad2gu" path="res://assets/art/icons/cel_spike_item.png" id="2_yi7wv"]
+[ext_resource type="Script" uid="uid://bs2bqgfmsgh17" path="res://in_game/hp_bar.gd" id="3_7thqk"]
+[ext_resource type="FontFile" uid="uid://4fa2n0sys7h1" path="res://assets/fonts/BeaufortForLoL-OTF/BeaufortforLOL-Medium.otf" id="3_bd7p6"]
+[ext_resource type="Texture2D" uid="uid://df7ou111ct3nc" path="res://assets/art/icons/cel_blade_item.png" id="3_s8ks3"]
+[ext_resource type="Texture2D" uid="uid://cw2nluuobw2t2" path="res://assets/art/cel_spike/particle/particle.png" id="4_454xp"]
+[ext_resource type="Texture2D" uid="uid://jgfgjb3tnhym" path="res://assets/art/inventory/inventory.png" id="8_p3ksu"]
+
+[sub_resource type="Environment" id="Environment_7thqk"]
+background_mode = 3
+background_canvas_max_layer = 4
+glow_enabled = true
+glow_blend_mode = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myw55"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcs1a"]
+bg_color = Color(0.7470834, 0, 0.23615974, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttrpu"]
+bg_color = Color(1.2742168, 0.671431, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_454xp"]
+bg_color = Color(0.0020497541, 0.0020497541, 0.0020497527, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bd7p6"]
+bg_color = Color(3.4884129, 0.42425367, 0, 1)
+
+[sub_resource type="Curve" id="Curve_bd7p6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.035844684), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_875nb"]
+curve = SubResource("Curve_bd7p6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4qou2"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 3.0
+initial_velocity_min = 641.51
+initial_velocity_max = 958.49
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_875nb")
+
+[node name="InGameUI" type="CanvasLayer" node_paths=PackedStringArray("celspike_textures")]
+layer = 2
+script = ExtResource("1_ttrpu")
+celspike_textures = [NodePath("Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox/GridContainer/AspectRatioContainer/CS1"), NodePath("Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox/GridContainer/AspectRatioContainer2/CS2"), NodePath("Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox/GridContainer/AspectRatioContainer3/CS3")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7thqk")
+
+[node name="Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="HeaderHBox" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="StatsHBox" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="PlayerHPBar" type="ProgressBar" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_myw55")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lcs1a")
+value = 50.0
+script = ExtResource("2_4qou2")
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CS1" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox/GridContainer/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("1_myw55")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CS2" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox/GridContainer/AspectRatioContainer2"]
+layout_mode = 2
+texture = ExtResource("1_myw55")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CS3" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/StatsHBox/GridContainer/AspectRatioContainer3"]
+layout_mode = 2
+texture = ExtResource("1_myw55")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BossHP" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/BossHP"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="BossNameLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/BossHP/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1160.0
+offset_top = -11.5
+offset_right = 1160.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_bd7p6")
+theme_override_font_sizes/font_size = 96
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/BossHP"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/BossHP/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HPBar" type="ProgressBar" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/BossHP/Control/MarginContainer" node_paths=PackedStringArray("boss_name_label")]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/fill = SubResource("StyleBoxFlat_ttrpu")
+show_percentage = false
+script = ExtResource("3_7thqk")
+boss_name_label = NodePath("../../../Control2/BossNameLabel")
+
+[node name="DamageBar" type="ProgressBar" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/BossHP/Control/MarginContainer/HPBar"]
+unique_name_in_owner = true
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_454xp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bd7p6")
+show_percentage = false
+
+[node name="DamageBarTimer" type="Timer" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/BossHP/Control/MarginContainer/HPBar"]
+unique_name_in_owner = true
+wait_time = 0.15
+one_shot = true
+
+[node name="LaserParticles" type="GPUParticles2D" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox/BossHP/Control/MarginContainer/HPBar"]
+unique_name_in_owner = true
+modulate = Color(3.0033166, 0.7763669, 0.56031954, 1)
+emitting = false
+amount = 10
+texture = ExtResource("4_454xp")
+one_shot = true
+speed_scale = 2.25
+explosiveness = 1.0
+randomness = 0.9
+collision_base_size = 0.1
+visibility_rect = Rect2(-100, -100, 4000, 4000)
+local_coords = true
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_4qou2")
+
+[node name="Filler" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="MiddleHBox" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/VBoxContainer/MiddleHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/MiddleHBox/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.35
+anchor_right = 0.15
+anchor_bottom = 0.55
+offset_right = 5.0
+offset_bottom = 23.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/MiddleHBox/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MiddleHBox/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s8ks3")
+theme_override_font_sizes/font_size = 96
+text = "[I]"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Panel/MarginContainer/VBoxContainer/MiddleHBox/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventorySprite" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MiddleHBox/Control/MarginContainer/HBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("8_p3ksu")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="FooterHBox" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.25
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/FooterHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/VBoxContainer/FooterHBox/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/FooterHBox/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_right = 0.7
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/FooterHBox/MarginContainer/Control/GridContainer"]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/FooterHBox/MarginContainer/Control/GridContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_s8ks3")
+theme_override_font_sizes/font_size = 60
+text = "F / Hold F"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Panel/MarginContainer/VBoxContainer/FooterHBox/MarginContainer/Control/GridContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/FooterHBox/MarginContainer/Control/GridContainer/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_yi7wv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/FooterHBox/MarginContainer/Control/GridContainer"]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/FooterHBox/MarginContainer/Control/GridContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_s8ks3")
+theme_override_font_sizes/font_size = 60
+text = "L CLICK"
+horizontal_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Panel/MarginContainer/VBoxContainer/FooterHBox/MarginContainer/Control/GridContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/FooterHBox/MarginContainer/Control/GridContainer/VBoxContainer2/AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_s8ks3")
+expand_mode = 1
+stretch_mode = 4
+
+[connection signal="timeout" from="Panel/MarginContainer/VBoxContainer/HeaderHBox/BossHP/Control/MarginContainer/HPBar/DamageBarTimer" to="Panel/MarginContainer/VBoxContainer/HeaderHBox/BossHP/Control/MarginContainer/HPBar" method="_on_damage_bar_timer_timeout"]

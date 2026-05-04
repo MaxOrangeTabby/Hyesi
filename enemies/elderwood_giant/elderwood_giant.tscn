@@ -1,0 +1,604 @@
+[gd_scene load_steps=49 format=3 uid="uid://ddb4b8y5idamc"]
+
+[ext_resource type="Script" uid="uid://b2wqm3xudih32" path="res://enemies/elderwood_giant/elderwood_giant.gd" id="1_00m6k"]
+[ext_resource type="Texture2D" uid="uid://d17plwe0mxlpl" path="res://assets/art/enemies/elderwood_giant/charge/charge_ss.png" id="2_cmu5l"]
+[ext_resource type="Texture2D" uid="uid://dplm4jpc4i85j" path="res://assets/art/enemies/elderwood_giant/punch/punch_ss.png" id="3_i3xil"]
+[ext_resource type="Texture2D" uid="uid://c4ykqd30lpm02" path="res://assets/art/enemies/elderwood_giant/idle/idle_ss.png" id="3_sbuff"]
+[ext_resource type="Texture2D" uid="uid://be7hrlc0x3m2r" path="res://assets/art/enemies/elderwood_giant/jump/jump_ss.png" id="4_c3cdv"]
+[ext_resource type="Texture2D" uid="uid://cm3qdgka5m0f4" path="res://assets/art/enemies/elderwood_giant/smash/smash_ss.png" id="6_22iyi"]
+[ext_resource type="PackedScene" uid="uid://bwatk3or8hkvd" path="res://celspike/celspike_mark.tscn" id="7_lnn3k"]
+[ext_resource type="Script" uid="uid://cqs1meselq5t" path="res://enemies/elderwood_giant/attack_hitboxes.gd" id="8_rhamf"]
+
+[sub_resource type="Animation" id="Animation_cmu5l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_cmu5l")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackStuff/AttackHitboxes/PunchHB/PunchCollider:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackStuff/AttackHitboxes/SmashHB/SmashCollider:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_i3xil"]
+resource_name = "charge"
+length = 0.6
+step = 0.071428575
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_cmu5l")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.071428575, 0.14285715, 0.21428573, 0.2857143, 0.35714287, 0.42857146, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_c3cdv"]
+resource_name = "idle"
+length = 0.65
+step = 0.14285715
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_sbuff")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.14285715, 0.2857143, 0.42857146, 0.5714286),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_22iyi"]
+resource_name = "jump"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_c3cdv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_sbuff"]
+resource_name = "punch"
+length = 0.6
+step = 0.071428575
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_i3xil")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.071428575, 0.14285715, 0.21428573, 0.2857143, 0.35714287, 0.42857146, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackStuff/AttackHitboxes/PunchHB/PunchCollider:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15943083, 0.4045561),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_lnn3k"]
+resource_name = "smash"
+step = 0.071428575
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_22iyi")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.071428575, 0.14285715, 0.21428573, 0.2857143, 0.35714287),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackStuff/AttackHitboxes/SmashHB/SmashCollider:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.086883284, 0.2857143),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sbuff"]
+_data = {
+&"RESET": SubResource("Animation_cmu5l"),
+&"charge": SubResource("Animation_i3xil"),
+&"idle": SubResource("Animation_c3cdv"),
+&"jump": SubResource("Animation_22iyi"),
+&"punch": SubResource("Animation_sbuff"),
+&"smash": SubResource("Animation_lnn3k")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22iyi"]
+size = Vector2(662.25, 639.5)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_rhamf"]
+var/can_change_dir/name = &"can_change_dir"
+var/can_change_dir/type = 1
+var/can_change_dir/value = false
+var/can_change_dir/hint = 0
+var/can_change_dir/hint_string = ""
+var/active/name = &"active"
+var/active/type = 1
+var/active/value = false
+var/active/hint = 0
+var/active/hint_string = ""
+var/player_in_range/name = &"player_in_range"
+var/player_in_range/type = 1
+var/player_in_range/value = false
+var/player_in_range/hint = 0
+var/player_in_range/hint_string = ""
+var/curr_x_dir/name = &"curr_x_dir"
+var/curr_x_dir/type = 2
+var/curr_x_dir/value = 0
+var/curr_x_dir/hint = 0
+var/curr_x_dir/hint_string = ""
+
+[sub_resource type="BBVariant" id="BBVariant_rhamf"]
+type = 1
+saved_value = false
+resource_name = "<null>"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_cgdtv"]
+variable = &"active"
+value = SubResource("BBVariant_rhamf")
+
+[sub_resource type="BBNode" id="BBNode_rhamf"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_cgdtv"]
+await_completion = 1.0
+animation_player = SubResource("BBNode_rhamf")
+animation_name = &"idle"
+
+[sub_resource type="BTSequence" id="BTSequence_has77"]
+custom_name = "NotActive"
+children = [SubResource("BTCheckVar_cgdtv"), SubResource("BTPlayAnimation_cgdtv")]
+
+[sub_resource type="BBVariant" id="BBVariant_cgdtv"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_has77"]
+variable = &"player_in_range"
+value = SubResource("BBVariant_cgdtv")
+
+[sub_resource type="BBVariant" id="BBVariant_has77"]
+type = 1
+saved_value = false
+resource_name = "<null>"
+
+[sub_resource type="BTSetVar" id="BTSetVar_wgw0j"]
+variable = &"can_change_dir"
+value = SubResource("BBVariant_has77")
+
+[sub_resource type="BBNode" id="BBNode_has77"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_wgw0j"]
+node = SubResource("BBNode_has77")
+method = &"punch_attack"
+
+[sub_resource type="BBVariant" id="BBVariant_0rd22"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTSetVar" id="BTSetVar_06uu8"]
+variable = &"can_change_dir"
+value = SubResource("BBVariant_0rd22")
+
+[sub_resource type="BTSequence" id="BTSequence_0rd22"]
+custom_name = "InRange"
+children = [SubResource("BTCheckVar_has77"), SubResource("BTSetVar_wgw0j"), SubResource("BTCallMethod_wgw0j"), SubResource("BTSetVar_06uu8")]
+
+[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_06uu8"]
+children = [SubResource("BTSequence_0rd22")]
+
+[sub_resource type="BBNode" id="BBNode_cgdtv"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_has77"]
+node = SubResource("BBNode_cgdtv")
+method = &"smash_attack"
+
+[sub_resource type="BTWait" id="BTWait_rhamf"]
+duration = 4.0
+
+[sub_resource type="BBNode" id="BBNode_0rd22"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_06uu8"]
+await_completion = 1.0
+animation_player = SubResource("BBNode_0rd22")
+animation_name = &"charge"
+
+[sub_resource type="BBNode" id="BBNode_wgw0j"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_0rd22"]
+node = SubResource("BBNode_wgw0j")
+method = &"punch_dash"
+
+[sub_resource type="BTSequence" id="BTSequence_w6mkl"]
+custom_name = "OutOfRange"
+children = [SubResource("BTCallMethod_has77"), SubResource("BTWait_rhamf"), SubResource("BTPlayAnimation_06uu8"), SubResource("BTCallMethod_0rd22")]
+
+[sub_resource type="BTWait" id="BTWait_cgdtv"]
+duration = 2.5
+
+[sub_resource type="BTSequence" id="BTSequence_wgw0j"]
+custom_name = "Active"
+children = [SubResource("BTAlwaysSucceed_06uu8"), SubResource("BTSequence_w6mkl"), SubResource("BTWait_cgdtv")]
+
+[sub_resource type="BTDynamicSelector" id="BTDynamicSelector_rhamf"]
+children = [SubResource("BTSequence_has77"), SubResource("BTSequence_wgw0j")]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_cgdtv"]
+blackboard_plan = SubResource("BlackboardPlan_rhamf")
+root_task = SubResource("BTDynamicSelector_rhamf")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_lnn3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnn3k"]
+size = Vector2(925.5, 536)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhamf"]
+size = Vector2(689, 672)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgdtv"]
+size = Vector2(635, 683.5)
+
+[node name="ElderwoodGiant" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "bt_player", "sprite", "collider", "attack_hitboxes", "attack_stuff", "hover_timer", "celspike_mark") groups=["enemy_group"]]
+collision_layer = 8
+collision_mask = 18
+script = ExtResource("1_00m6k")
+anim_player = NodePath("AnimationPlayer")
+bt_player = NodePath("BTPlayer")
+sprite = NodePath("Sprite2D")
+collider = NodePath("Collider")
+attack_hitboxes = NodePath("AttackStuff/AttackHitboxes")
+attack_stuff = NodePath("AttackStuff")
+hover_timer = NodePath("HoverTimer")
+enemy_name = "Elderwood Giant"
+max_hp = 1400.0
+celspike_mark = NodePath("CelspikeMark")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cmu5l")
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sbuff")
+}
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(-28.875, 37.75)
+shape = SubResource("RectangleShape2D_22iyi")
+
+[node name="CelspikeMark" parent="." instance=ExtResource("7_lnn3k")]
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = SubResource("BehaviorTree_cgdtv")
+blackboard_plan = SubResource("BlackboardPlan_lnn3k")
+
+[node name="AttackStuff" type="Node2D" parent="."]
+
+[node name="AttackHitboxes" type="Node2D" parent="AttackStuff" node_paths=PackedStringArray("parent_node")]
+script = ExtResource("8_rhamf")
+parent_node = NodePath("../..")
+
+[node name="PunchHB" type="Area2D" parent="AttackStuff/AttackHitboxes"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="PunchCollider" type="CollisionShape2D" parent="AttackStuff/AttackHitboxes/PunchHB"]
+position = Vector2(-161, -105)
+shape = SubResource("RectangleShape2D_lnn3k")
+disabled = true
+
+[node name="SmashHB" type="Area2D" parent="AttackStuff/AttackHitboxes"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="SmashCollider" type="CollisionShape2D" parent="AttackStuff/AttackHitboxes/SmashHB"]
+position = Vector2(-61.5, 34)
+shape = SubResource("RectangleShape2D_rhamf")
+disabled = true
+
+[node name="InRange" type="Area2D" parent="AttackStuff/AttackHitboxes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackStuff/AttackHitboxes/InRange"]
+position = Vector2(-319, 34.25)
+shape = SubResource("RectangleShape2D_cgdtv")
+
+[node name="HoverTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="AttackStuff/AttackHitboxes/PunchHB" to="AttackStuff/AttackHitboxes" method="_on_punch_hb_body_entered"]
+[connection signal="body_entered" from="AttackStuff/AttackHitboxes/SmashHB" to="AttackStuff/AttackHitboxes" method="_on_smash_hb_body_entered"]
+[connection signal="body_entered" from="AttackStuff/AttackHitboxes/InRange" to="." method="_on_in_range_body_entered"]
+[connection signal="body_exited" from="AttackStuff/AttackHitboxes/InRange" to="." method="_on_in_range_body_exited"]

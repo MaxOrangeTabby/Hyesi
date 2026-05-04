@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Augment" load_steps=8 format=3 uid="uid://b0riqltm1ernx"]
+
+[ext_resource type="Script" uid="uid://dkn4t3a330cms" path="res://augments/effects/glass_cannon.gd" id="1_bjg8a"]
+[ext_resource type="Script" uid="uid://cf0rw57ggiwtx" path="res://stats/stat_field.gd" id="2_hahee"]
+[ext_resource type="Script" uid="uid://bw6hgli8y3lab" path="res://augments/augment.gd" id="3_l4ybm"]
+[ext_resource type="Texture2D" uid="uid://clfxe2dnq8afi" path="res://assets/art/augments/glass_cannon/glass_cannon.png" id="4_bjg8a"]
+
+[sub_resource type="Resource" id="Resource_hahee"]
+script = ExtResource("1_bjg8a")
+effect_type = 3
+metadata/_custom_type_script = "uid://dkn4t3a330cms"
+
+[sub_resource type="Resource" id="Resource_bjg8a"]
+script = ExtResource("2_hahee")
+stat_value = -20.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[sub_resource type="Resource" id="Resource_l4ybm"]
+script = ExtResource("2_hahee")
+stat_attribute = 1
+stat_value = 40.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[resource]
+script = ExtResource("3_l4ybm")
+name = "GLASS CANNON"
+texture = ExtResource("4_bjg8a")
+augment_effect = SubResource("Resource_hahee")
+augment_stats = Array[ExtResource("2_hahee")]([SubResource("Resource_bjg8a"), SubResource("Resource_l4ybm")])
+metadata/_custom_type_script = "uid://bw6hgli8y3lab"

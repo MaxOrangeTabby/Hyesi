@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Augment" load_steps=8 format=3 uid="uid://dbeqeeblxmbam"]
+
+[ext_resource type="Script" uid="uid://br2rmtcdjwl56" path="res://augments/effects/duelist.gd" id="1_kblkc"]
+[ext_resource type="Script" uid="uid://cf0rw57ggiwtx" path="res://stats/stat_field.gd" id="2_wou0q"]
+[ext_resource type="Script" uid="uid://bw6hgli8y3lab" path="res://augments/augment.gd" id="3_jydrh"]
+[ext_resource type="Texture2D" uid="uid://damnvotbns8jn" path="res://assets/art/augments/duelist/duelist.png" id="4_b22ge"]
+
+[sub_resource type="Resource" id="Resource_b22ge"]
+script = ExtResource("1_kblkc")
+effect_type = 3
+metadata/_custom_type_script = "uid://br2rmtcdjwl56"
+
+[sub_resource type="Resource" id="Resource_wou0q"]
+script = ExtResource("2_wou0q")
+stat_attribute = 4
+stat_value = 35.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[sub_resource type="Resource" id="Resource_jydrh"]
+script = ExtResource("2_wou0q")
+stat_attribute = 5
+stat_value = -15.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[resource]
+script = ExtResource("3_jydrh")
+name = "DUELIST"
+texture = ExtResource("4_b22ge")
+augment_effect = SubResource("Resource_b22ge")
+augment_stats = Array[ExtResource("2_wou0q")]([SubResource("Resource_wou0q"), SubResource("Resource_jydrh")])
+metadata/_custom_type_script = "uid://bw6hgli8y3lab"

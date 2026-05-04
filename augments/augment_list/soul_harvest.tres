@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Augment" load_steps=7 format=3 uid="uid://dxpwslvkhq1p6"]
+
+[ext_resource type="Script" uid="uid://cokgf72alkjx4" path="res://augments/effects/soul_harvest.gd" id="1_jxxi1"]
+[ext_resource type="Script" uid="uid://cf0rw57ggiwtx" path="res://stats/stat_field.gd" id="2_j1niq"]
+[ext_resource type="Script" uid="uid://bw6hgli8y3lab" path="res://augments/augment.gd" id="3_mek78"]
+[ext_resource type="Texture2D" uid="uid://wl1e5lcrfhe" path="res://assets/art/augments/soul_harvest/soul_harvest_icon.png" id="4_j1niq"]
+
+[sub_resource type="Resource" id="Resource_mek78"]
+script = ExtResource("1_jxxi1")
+effect_type = 1
+metadata/_custom_type_script = "uid://cokgf72alkjx4"
+
+[sub_resource type="Resource" id="Resource_jxxi1"]
+script = ExtResource("2_j1niq")
+stat_value = -15.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[resource]
+script = ExtResource("3_mek78")
+name = "SOUL HARVEST"
+texture = ExtResource("4_j1niq")
+augment_effect = SubResource("Resource_mek78")
+augment_stats = Array[ExtResource("2_j1niq")]([SubResource("Resource_jxxi1")])
+metadata/_custom_type_script = "uid://bw6hgli8y3lab"

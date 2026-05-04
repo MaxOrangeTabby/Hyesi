@@ -1,0 +1,445 @@
+[gd_scene load_steps=44 format=3 uid="uid://b28ha5l5lkrsu"]
+
+[ext_resource type="Texture2D" uid="uid://bw8j5oqr3y3a6" path="res://assets/art/enemies/thorn_beetle/walk/walk_ss.png" id="1_36bj7"]
+[ext_resource type="Script" uid="uid://ddkhj7wqth25m" path="res://enemies/thorn_beetle/thorn_beetle.gd" id="1_xihlg"]
+[ext_resource type="Script" uid="uid://d0bkh5nilrrbh" path="res://ai/tasks/thorn_beetle/charge.gd" id="2_74vd2"]
+[ext_resource type="Texture2D" uid="uid://jxf8vic14bb5" path="res://assets/art/enemies/thorn_beetle/charge/charge_ss.png" id="2_d1hou"]
+[ext_resource type="Script" uid="uid://da8w4f5qgcgo2" path="res://ai/tasks/thorn_beetle/patrol.gd" id="3_l7l52"]
+[ext_resource type="Texture2D" uid="uid://doq120tv3te81" path="res://assets/art/enemies/thorn_beetle/dash/dash_ss.png" id="3_y4nu6"]
+[ext_resource type="Script" uid="uid://bb7pdnwhvakyc" path="res://ai/tasks/thorn_beetle/chase.gd" id="4_xxnvr"]
+[ext_resource type="Script" uid="uid://dhfm0xxtvlmf" path="res://ai/tasks/thorn_beetle/dash.gd" id="5_6w0bf"]
+[ext_resource type="PackedScene" uid="uid://bwatk3or8hkvd" path="res://celspike/celspike_mark.tscn" id="9_2ry3v"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_6w0bf"]
+var/is_active/name = &"is_active"
+var/is_active/type = 1
+var/is_active/value = false
+var/is_active/hint = 0
+var/is_active/hint_string = ""
+var/player_detected/name = &"player_detected"
+var/player_detected/type = 1
+var/player_detected/value = false
+var/player_detected/hint = 0
+var/player_detected/hint_string = ""
+var/player_in_range/name = &"player_in_range"
+var/player_in_range/type = 1
+var/player_in_range/value = false
+var/player_in_range/hint = 0
+var/player_in_range/hint_string = ""
+var/curr_x_dir/name = &"curr_x_dir"
+var/curr_x_dir/type = 2
+var/curr_x_dir/value = 0
+var/curr_x_dir/hint = 0
+var/curr_x_dir/hint_string = ""
+var/can_change_dir/name = &"can_change_dir"
+var/can_change_dir/type = 1
+var/can_change_dir/value = false
+var/can_change_dir/hint = 0
+var/can_change_dir/hint_string = ""
+
+[sub_resource type="BBVariant" id="BBVariant_l7l52"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_74vd2"]
+variable = &"player_in_range"
+value = SubResource("BBVariant_l7l52")
+
+[sub_resource type="BBVariant" id="BBVariant_xihlg"]
+type = 1
+saved_value = false
+resource_name = "<null>"
+
+[sub_resource type="BTSetVar" id="BTSetVar_6w0bf"]
+variable = &"can_change_dir"
+value = SubResource("BBVariant_xihlg")
+
+[sub_resource type="BTAction" id="BTAction_xxnvr"]
+script = ExtResource("2_74vd2")
+
+[sub_resource type="BBNode" id="BBNode_74vd2"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_xxnvr"]
+await_completion = 0.7
+animation_player = SubResource("BBNode_74vd2")
+animation_name = &"charge"
+
+[sub_resource type="BTAction" id="BTAction_2ry3v"]
+script = ExtResource("5_6w0bf")
+dash_speed = 4000.0
+
+[sub_resource type="BBNode" id="BBNode_6w0bf"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_l7l52"]
+await_completion = 1.0
+animation_player = SubResource("BBNode_6w0bf")
+animation_name = &"dash"
+
+[sub_resource type="BBVariant" id="BBVariant_74vd2"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTSetVar" id="BTSetVar_xxnvr"]
+variable = &"can_change_dir"
+value = SubResource("BBVariant_74vd2")
+
+[sub_resource type="BTSequence" id="BTSequence_xxnvr"]
+children = [SubResource("BTSetVar_6w0bf"), SubResource("BTAction_xxnvr"), SubResource("BTPlayAnimation_xxnvr"), SubResource("BTAction_2ry3v"), SubResource("BTPlayAnimation_l7l52"), SubResource("BTSetVar_xxnvr")]
+
+[sub_resource type="BTCooldown" id="BTCooldown_2ry3v"]
+duration = 4.0
+children = [SubResource("BTSequence_xxnvr")]
+
+[sub_resource type="BTDynamicSequence" id="BTDynamicSequence_xxnvr"]
+custom_name = "AttackSeq"
+children = [SubResource("BTCheckVar_74vd2"), SubResource("BTCooldown_2ry3v")]
+
+[sub_resource type="BBVariant" id="BBVariant_xxnvr"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_2ry3v"]
+variable = &"player_detected"
+value = SubResource("BBVariant_xxnvr")
+
+[sub_resource type="BTAction" id="BTAction_yhm0t"]
+script = ExtResource("4_xxnvr")
+chase_speed = 200.0
+
+[sub_resource type="BTDynamicSequence" id="BTDynamicSequence_2ry3v"]
+custom_name = "ChaseSeq"
+children = [SubResource("BTCheckVar_2ry3v"), SubResource("BTAction_yhm0t")]
+
+[sub_resource type="BTAction" id="BTAction_74vd2"]
+script = ExtResource("3_l7l52")
+walk_speed = 300.0
+
+[sub_resource type="BTSequence" id="BTSequence_6w0bf"]
+custom_name = "PatrolSeq"
+children = [SubResource("BTAction_74vd2")]
+
+[sub_resource type="BTDynamicSelector" id="BTDynamicSelector_xxnvr"]
+custom_name = "MainSelector"
+children = [SubResource("BTDynamicSequence_xxnvr"), SubResource("BTDynamicSequence_2ry3v"), SubResource("BTSequence_6w0bf")]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_l7l52"]
+blackboard_plan = SubResource("BlackboardPlan_6w0bf")
+root_task = SubResource("BTDynamicSelector_xxnvr")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_2ry3v"]
+
+[sub_resource type="Animation" id="Animation_36bj7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_36bj7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_y4nu6"]
+resource_name = "charge"
+length = 0.8
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_d1hou")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334, 0.4166667, 0.5, 0.5833334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_xihlg"]
+resource_name = "dash"
+length = 0.4
+step = 0.05882353
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_y4nu6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05882353, 0.11764706, 0.1764706, 0.23529412),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_d1hou"]
+resource_name = "walk"
+length = 0.45
+loop_mode = 1
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_36bj7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4nu6"]
+_data = {
+&"RESET": SubResource("Animation_36bj7"),
+&"charge": SubResource("Animation_y4nu6"),
+&"dash": SubResource("Animation_xihlg"),
+&"walk": SubResource("Animation_d1hou")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xihlg"]
+size = Vector2(543, 273)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxnvr"]
+size = Vector2(3175, 709)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7l52"]
+size = Vector2(2331, 703.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ry3v"]
+size = Vector2(542, 273)
+
+[node name="ThornBeetle" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "anim_player", "btplayer", "l_raycast", "r_raycast", "celspike_mark") groups=["enemy_group"]]
+scale = Vector2(0.4, 0.4)
+collision_layer = 136
+collision_mask = 2
+script = ExtResource("1_xihlg")
+sprite = NodePath("Sprite2D")
+anim_player = NodePath("AnimationPlayer")
+btplayer = NodePath("BTPlayer")
+l_raycast = NodePath("Raycasts/LRayCast")
+r_raycast = NodePath("Raycasts/RRayCast")
+enemy_name = "Thorn Beetle"
+max_hp = 175.0
+loot_spawn_count = 2
+celspike_mark = NodePath("CelspikeMark")
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = SubResource("BehaviorTree_l7l52")
+blackboard_plan = SubResource("BlackboardPlan_2ry3v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_y4nu6")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(29, 35)
+shape = SubResource("RectangleShape2D_xihlg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_36bj7")
+hframes = 2
+vframes = 2
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(-3.5, -186.5)
+shape = SubResource("RectangleShape2D_xxnvr")
+
+[node name="AttackArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, -187.25)
+shape = SubResource("RectangleShape2D_l7l52")
+
+[node name="Raycasts" type="Node2D" parent="."]
+
+[node name="LRayCast" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-702.49994, 522.49994)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="RRayCast" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(652.49994, 492.49994)
+collision_mask = 2
+
+[node name="CelspikeMark" parent="." instance=ExtResource("9_2ry3v")]
+
+[node name="AttackHitboxes" type="Node2D" parent="."]
+
+[node name="DashHitArea" type="Area2D" parent="AttackHitboxes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitboxes/DashHitArea"]
+position = Vector2(29, 34.5)
+shape = SubResource("RectangleShape2D_2ry3v")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="body_entered" from="AttackHitboxes/DashHitArea" to="." method="_on_dash_hit_area_body_entered"]

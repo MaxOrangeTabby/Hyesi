@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=3 uid="uid://bg2hmmp045cd4"]
+
+[ext_resource type="Script" uid="uid://biieilu3ohkka" path="res://augments/ui/augment_card.gd" id="1_7ke5p"]
+[ext_resource type="Texture2D" uid="uid://be20rlneyrqcc" path="res://assets/art/augments/black_flash/black_flash_icon.png" id="1_44rlu"]
+[ext_resource type="FontFile" uid="uid://ddmot6hbvj2ks" path="res://assets/fonts/BeaufortForLoL-OTF/BeaufortforLOL-BoldItalic.otf" id="2_7ke5p"]
+[ext_resource type="FontFile" uid="uid://dkebnx7wwe5ti" path="res://assets/fonts/univers_55.ttf" id="3_wg0cf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogvp5"]
+bg_color = Color(0.14901961, 0.1254902, 0.23921569, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.7529412, 0.5647059, 1, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yef0x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2cpi1"]
+color = Color(0.53333336, 0.53333336, 0.6666667, 1)
+thickness = 6
+
+[node name="AugmentCard" type="Control"]
+layout_mode = 3
+anchor_right = 0.4
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7ke5p")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.65
+
+[node name="PanelContainer" type="PanelContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ogvp5")
+
+[node name="VBox" type="VBoxContainer" parent="AspectRatioContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="AspectRatioContainer/PanelContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AspectRatioContainer/PanelContainer/VBox/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/PanelContainer/VBox/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="AspectRatioContainer/PanelContainer/VBox/Control/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TexPanel" type="PanelContainer" parent="AspectRatioContainer/PanelContainer/VBox/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_yef0x")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="AspectRatioContainer/PanelContainer/VBox/Control/VBoxContainer2/TexPanel"]
+layout_mode = 2
+
+[node name="AugmentTex" type="TextureRect" parent="AspectRatioContainer/PanelContainer/VBox/Control/VBoxContainer2/TexPanel/AspectRatioContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_44rlu")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="NamePanel" type="MarginContainer" parent="AspectRatioContainer/PanelContainer/VBox/Control/VBoxContainer2"]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AugmentName" type="Label" parent="AspectRatioContainer/PanelContainer/VBox/Control/VBoxContainer2/NamePanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7529412, 0.5647059, 1, 1)
+theme_override_fonts/font = ExtResource("2_7ke5p")
+theme_override_font_sizes/font_size = 92
+text = "BLACK FLASH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/PanelContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+
+[node name="HSeparator" type="HSeparator" parent="AspectRatioContainer/PanelContainer/VBox/MarginContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_2cpi1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/PanelContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/PanelContainer/VBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="AugmentDesc" type="Label" parent="AspectRatioContainer/PanelContainer/VBox/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6862745, 0.6627451, 0.9254902, 1)
+theme_override_fonts/font = ExtResource("3_wg0cf")
+theme_override_font_sizes/font_size = 72
+text = "After 9 attacks, the 10th one will strike for 2.5x damage
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="AspectRatioContainer/Button" to="." method="_on_button_pressed"]

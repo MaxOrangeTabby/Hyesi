@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Augment" load_steps=9 format=3 uid="uid://db66crbg27qnw"]
+
+[ext_resource type="Script" uid="uid://dh1fn8q35wj8c" path="res://augments/effects/berserker.gd" id="1_kxnyk"]
+[ext_resource type="Script" uid="uid://cf0rw57ggiwtx" path="res://stats/stat_field.gd" id="2_imrxl"]
+[ext_resource type="Script" uid="uid://bw6hgli8y3lab" path="res://augments/augment.gd" id="3_bfuvj"]
+[ext_resource type="Texture2D" uid="uid://eyhva8ptoh5o" path="res://assets/art/augments/berserker/berserker.png" id="4_imrxl"]
+
+[sub_resource type="Resource" id="Resource_bfuvj"]
+script = ExtResource("1_kxnyk")
+effect_type = 3
+metadata/_custom_type_script = "uid://dh1fn8q35wj8c"
+
+[sub_resource type="Resource" id="Resource_kxnyk"]
+script = ExtResource("2_imrxl")
+stat_attribute = 1
+stat_value = 30.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[sub_resource type="Resource" id="Resource_imrxl"]
+script = ExtResource("2_imrxl")
+stat_attribute = 2
+stat_value = 20.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[sub_resource type="Resource" id="Resource_kp658"]
+script = ExtResource("2_imrxl")
+stat_attribute = 3
+stat_value = -40.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[resource]
+script = ExtResource("3_bfuvj")
+name = "BERSERKER"
+texture = ExtResource("4_imrxl")
+augment_effect = SubResource("Resource_bfuvj")
+augment_stats = Array[ExtResource("2_imrxl")]([SubResource("Resource_kxnyk"), SubResource("Resource_imrxl"), SubResource("Resource_kp658")])
+metadata/_custom_type_script = "uid://bw6hgli8y3lab"

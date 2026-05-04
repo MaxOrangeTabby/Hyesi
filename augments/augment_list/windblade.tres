@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Augment" load_steps=7 format=3 uid="uid://b23o5ot68o2yn"]
+
+[ext_resource type="Script" uid="uid://cf0rw57ggiwtx" path="res://stats/stat_field.gd" id="2_n67wf"]
+[ext_resource type="Script" uid="uid://cg2nvrfsjrwva" path="res://augments/effects/windblade.gd" id="2_smah0"]
+[ext_resource type="Script" uid="uid://bw6hgli8y3lab" path="res://augments/augment.gd" id="3_smah0"]
+[ext_resource type="Texture2D" uid="uid://4o0qppnwy72u" path="res://assets/art/augments/windblade/windblade_icon.png" id="5_lelc3"]
+
+[sub_resource type="Resource" id="Resource_n67wf"]
+script = ExtResource("2_smah0")
+effect_type = 3
+metadata/_custom_type_script = "uid://cg2nvrfsjrwva"
+
+[sub_resource type="Resource" id="Resource_smah0"]
+script = ExtResource("2_n67wf")
+stat_attribute = 1
+stat_value = -15.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[resource]
+script = ExtResource("3_smah0")
+name = "WINDBLADE"
+texture = ExtResource("5_lelc3")
+augment_effect = SubResource("Resource_n67wf")
+augment_stats = Array[ExtResource("2_n67wf")]([SubResource("Resource_smah0")])
+metadata/_custom_type_script = "uid://bw6hgli8y3lab"

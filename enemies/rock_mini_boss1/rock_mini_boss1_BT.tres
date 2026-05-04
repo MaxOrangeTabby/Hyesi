@@ -1,0 +1,11 @@
+[gd_resource type="BehaviorTree" load_steps=2 format=3 uid="uid://sb267l6m655n"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_bqbql"]
+var/player_in_range/name = &"player_in_range"
+var/player_in_range/type = 1
+var/player_in_range/value = false
+var/player_in_range/hint = 0
+var/player_in_range/hint_string = ""
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_bqbql")

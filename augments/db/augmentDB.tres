@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="AugmentDB" load_steps=14 format=3 uid="uid://cgksc287sxaja"]
+
+[ext_resource type="Script" uid="uid://bw6hgli8y3lab" path="res://augments/augment.gd" id="1_crkyx"]
+[ext_resource type="Resource" uid="uid://ct3x85cicwedw" path="res://augments/augment_list/cascade.tres" id="2_i0xg4"]
+[ext_resource type="Script" uid="uid://bvaltktco2mpa" path="res://augments/db/augmentDB.gd" id="2_y5x4f"]
+[ext_resource type="Resource" uid="uid://cfq6ks4thqj2j" path="res://augments/augment_list/absolute_focus.tres" id="2_yrpip"]
+[ext_resource type="Resource" uid="uid://qkuqb35achml" path="res://augments/augment_list/black_flash.tres" id="3_n6nqe"]
+[ext_resource type="Resource" uid="uid://c7s1s0d4iv5mu" path="res://augments/augment_list/adrenaline.tres" id="3_n8a3r"]
+[ext_resource type="Resource" uid="uid://b23o5ot68o2yn" path="res://augments/augment_list/windblade.tres" id="4_c2r0b"]
+[ext_resource type="Resource" uid="uid://db66crbg27qnw" path="res://augments/augment_list/berserker.tres" id="4_mke70"]
+[ext_resource type="Resource" uid="uid://dbeqeeblxmbam" path="res://augments/augment_list/duelist.tres" id="7_swwxl"]
+[ext_resource type="Resource" uid="uid://damjpioswbdf0" path="res://augments/augment_list/featherweight.tres" id="8_vp2qs"]
+[ext_resource type="Resource" uid="uid://b0riqltm1ernx" path="res://augments/augment_list/glass_cannon.tres" id="9_ufdki"]
+[ext_resource type="Resource" uid="uid://dxpwslvkhq1p6" path="res://augments/augment_list/soul_harvest.tres" id="10_0rw8i"]
+[ext_resource type="Resource" uid="uid://cl118py8xru3q" path="res://augments/augment_list/thorn_shield.tres" id="11_6ntl3"]
+
+[resource]
+script = ExtResource("2_y5x4f")
+augment_list = Array[ExtResource("1_crkyx")]([ExtResource("2_yrpip"), ExtResource("3_n8a3r"), ExtResource("4_mke70"), ExtResource("3_n6nqe"), ExtResource("2_i0xg4"), ExtResource("7_swwxl"), ExtResource("8_vp2qs"), ExtResource("9_ufdki"), ExtResource("10_0rw8i"), ExtResource("11_6ntl3"), ExtResource("4_c2r0b")])
+metadata/_custom_type_script = "uid://bvaltktco2mpa"

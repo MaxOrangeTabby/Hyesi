@@ -1,0 +1,173 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgap0luhmfl2w"]
+
+[ext_resource type="Script" uid="uid://cwr68nccf6acu" path="res://enemies/dew_wasp/dew_wasp.gd" id="1_2vd3c"]
+[ext_resource type="PackedScene" uid="uid://hfx7piwrpk7" path="res://enemies/dew_wasp/wasp_blast.tscn" id="2_e153s"]
+[ext_resource type="Texture2D" uid="uid://de2rt2h57t027" path="res://assets/art/enemies/dew_wasp/blast/blast_ss.png" id="2_itn54"]
+[ext_resource type="PackedScene" uid="uid://bwatk3or8hkvd" path="res://celspike/celspike_mark.tscn" id="4_0ivfa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_itn54"]
+radius = 175.0
+height = 414.0
+
+[sub_resource type="Animation" id="Animation_e153s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_itn54")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0ivfa"]
+resource_name = "blast"
+length = 0.9
+step = 0.071428575
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_itn54")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.071428575, 0.14285715, 0.21428573, 0.2857143, 0.35714287, 0.42857146, 0.5, 0.5714286, 0.6428572, 0.71428573, 0.7857143),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3scm"]
+_data = {
+&"RESET": SubResource("Animation_e153s"),
+&"blast": SubResource("Animation_0ivfa")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_itn54"]
+radius = 742.02563
+
+[node name="DewWasp" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "anim_player", "attack_cd_timer", "blast_marker", "collision_shape", "celspike_mark") groups=["enemy_group"]]
+collision_layer = 136
+collision_mask = 18
+script = ExtResource("1_2vd3c")
+sprite = NodePath("Sprite2D")
+anim_player = NodePath("AnimationPlayer")
+attack_cd_timer = NodePath("AttackCD")
+wasp_blast_scene = ExtResource("2_e153s")
+blast_marker = NodePath("Marker2D")
+collision_shape = NodePath("PlayerDetector/CollisionShape2D")
+enemy_name = "Dew Wasp"
+max_hp = 400.0
+loot_spawn_count = 2
+celspike_mark = NodePath("CelspikeMark")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_itn54")
+hframes = 4
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24, 0)
+shape = SubResource("CapsuleShape2D_itn54")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o3scm")
+}
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+shape = SubResource("CircleShape2D_itn54")
+
+[node name="AttackCD" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(86, 133)
+
+[node name="CelspikeMark" parent="." instance=ExtResource("4_0ivfa")]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Augment" load_steps=9 format=3 uid="uid://damjpioswbdf0"]
+
+[ext_resource type="Script" uid="uid://dwsofmhbsd6p8" path="res://augments/effects/featherweight.gd" id="1_a24rx"]
+[ext_resource type="Script" uid="uid://cf0rw57ggiwtx" path="res://stats/stat_field.gd" id="2_ty76n"]
+[ext_resource type="Script" uid="uid://bw6hgli8y3lab" path="res://augments/augment.gd" id="3_je3m1"]
+[ext_resource type="Texture2D" uid="uid://dovq4trimycya" path="res://assets/art/augments/featherweight/featherweight_icon.png" id="4_ty76n"]
+
+[sub_resource type="Resource" id="Resource_je3m1"]
+script = ExtResource("1_a24rx")
+effect_type = 3
+metadata/_custom_type_script = "uid://dwsofmhbsd6p8"
+
+[sub_resource type="Resource" id="Resource_a24rx"]
+script = ExtResource("2_ty76n")
+stat_value = -30.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[sub_resource type="Resource" id="Resource_ty76n"]
+script = ExtResource("2_ty76n")
+stat_attribute = 2
+stat_value = 20.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[sub_resource type="Resource" id="Resource_ji0b6"]
+script = ExtResource("2_ty76n")
+stat_attribute = 5
+stat_value = 25.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[resource]
+script = ExtResource("3_je3m1")
+name = "FEATHERWEIGHT"
+texture = ExtResource("4_ty76n")
+augment_effect = SubResource("Resource_je3m1")
+augment_stats = Array[ExtResource("2_ty76n")]([SubResource("Resource_a24rx"), SubResource("Resource_ty76n"), SubResource("Resource_ji0b6")])
+metadata/_custom_type_script = "uid://bw6hgli8y3lab"

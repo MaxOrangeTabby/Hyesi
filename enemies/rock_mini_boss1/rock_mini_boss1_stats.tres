@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="BaseEnemyStats" load_steps=2 format=3 uid="uid://ewbcsiuyoh5g"]
+
+[ext_resource type="Script" uid="uid://xq7xbiacirmg" path="res://enemies/base_enemy_stats.gd" id="1_5nbak"]
+
+[resource]
+script = ExtResource("1_5nbak")
+hp = 20.0
+speed = 70.0

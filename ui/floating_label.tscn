@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfxferv8gi6c5"]
+
+[ext_resource type="FontFile" uid="uid://dirbo7nb662hq" path="res://assets/fonts/BeaufortForLoL-TTF/BeaufortforLOL-Medium.ttf" id="1_eoukx"]
+[ext_resource type="Script" uid="uid://4sir8mc8y6du" path="res://ui/floating_label.gd" id="1_jyg2w"]
+
+[node name="FloatingLabel" type="Label"]
+theme_override_fonts/font = ExtResource("1_eoukx")
+theme_override_font_sizes/font_size = 64
+text = "Cel-Spike still recharging!"
+script = ExtResource("1_jyg2w")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://beelf1yboatvg"]
+
+[ext_resource type="Script" uid="uid://ccnxgvnvyjyb2" path="res://in_game/damage_screen/damage_screen.gd" id="1_sdqac"]
+[ext_resource type="Shader" uid="uid://d280g5j21d0tj" path="res://in_game/damage_screen/player_damaged.gdshader" id="2_24jrf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tr57m"]
+shader = ExtResource("2_24jrf")
+shader_parameter/intensity = 0.0
+shader_parameter/inner_rad = 0.25
+shader_parameter/outer_rad = 0.9
+shader_parameter/vignette_color = Color(1, 0, 0, 1)
+
+[node name="DamageScreen" type="CanvasLayer"]
+layer = 4
+script = ExtResource("1_sdqac")
+
+[node name="DamageFlash" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_tr57m")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

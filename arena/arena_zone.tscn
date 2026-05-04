@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd8nyury3iefn"]
+
+[ext_resource type="Script" uid="uid://bdper8b5d0x8w" path="res://arena/arena_zone.gd" id="1_dc5jh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc5jh"]
+size = Vector2(206, 134)
+
+[node name="ArenaZone" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_dc5jh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(93, 57)
+shape = SubResource("RectangleShape2D_dc5jh")

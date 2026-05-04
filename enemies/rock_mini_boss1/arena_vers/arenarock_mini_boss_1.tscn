@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw0p0lbrwwpom"]
+
+[ext_resource type="PackedScene" uid="uid://df7lh0s75y04y" path="res://enemies/rock_mini_boss1/rock_mini_boss1.tscn" id="1_gewpw"]
+[ext_resource type="Script" uid="uid://ynybn8yvjc2l" path="res://enemies/rock_mini_boss1/arena_vers/arenarock_mini_boss_1.gd" id="2_63dc4"]
+
+[node name="RockMiniBoss1" node_paths=PackedStringArray("wave_timer", "spire_timer") instance=ExtResource("1_gewpw")]
+script = ExtResource("2_63dc4")
+wave_count = 3
+wave_timer = NodePath("WaveTimer")
+spire_timer = NodePath("SpireTimer")
+enemy_name = ""
+max_hp = 0.0
+hp = 0.0
+loot_spawn_count = 0
+
+[node name="PlayerDetector" parent="FlipRoot/Areas" index="0"]
+visible = true
+
+[node name="AttackRange" parent="FlipRoot/Areas" index="1"]
+visible = true
+
+[node name="CollisionShape2D" parent="FlipRoot/Areas/AttackHitbox" index="0"]
+position = Vector2(-130.49997, -2.4999995)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WaveTimer" type="Timer" parent="." index="6"]
+wait_time = 4.0
+one_shot = true
+
+[node name="SpireTimer" type="Timer" parent="." index="7"]
+wait_time = 3.5
+one_shot = true
+
+[connection signal="timeout" from="SpireTimer" to="." method="_on_spire_timer_timeout"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq1c55m62p2h"]
+
+[ext_resource type="Script" uid="uid://p2h4sooenmu4" path="res://items/ui/stats_row.gd" id="1_lr18l"]
+[ext_resource type="FontFile" uid="uid://dirbo7nb662hq" path="res://assets/fonts/BeaufortForLoL-TTF/BeaufortforLOL-Medium.ttf" id="2_bwbae"]
+
+[node name="StatsRow" type="MarginContainer"]
+offset_right = 80.0
+offset_bottom = 80.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+script = ExtResource("1_lr18l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="StatName" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 80
+
+[node name="StatNameLabel" type="Label" parent="HBoxContainer/StatName"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bwbae")
+theme_override_font_sizes/font_size = 75
+text = "STAT NAME "
+horizontal_alignment = 1
+
+[node name="StatValue" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="StatValueLabel" type="Label" parent="HBoxContainer/StatValue"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bwbae")
+theme_override_font_sizes/font_size = 75
+text = "239"
+horizontal_alignment = 1

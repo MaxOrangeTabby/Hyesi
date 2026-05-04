@@ -1,0 +1,467 @@
+[gd_scene load_steps=13 format=3 uid="uid://shgsuv5bjuog"]
+
+[ext_resource type="Script" uid="uid://cvu5v2cggtnh7" path="res://player_kit/ui/player_kit_ui.gd" id="1_d85fv"]
+[ext_resource type="Texture2D" uid="uid://c36286e2iw4k7" path="res://assets/art/icons/down_icon.png" id="3_xyodk"]
+[ext_resource type="Texture2D" uid="uid://mcir587pkamu" path="res://assets/art/icons/neutral_icon.png" id="4_j5ihh"]
+[ext_resource type="Texture2D" uid="uid://ye8qwkr1ili7" path="res://assets/art/icons/up_icon.png" id="5_v2jx4"]
+[ext_resource type="Texture2D" uid="uid://t17lhug02vy3" path="res://assets/art/icons/hp_icon.png" id="8_px23e"]
+[ext_resource type="Texture2D" uid="uid://c8gmlli3cxp6l" path="res://assets/art/icons/atk_icon.png" id="9_y22wl"]
+[ext_resource type="Texture2D" uid="uid://do2ldsthd1ebv" path="res://assets/art/icons/atk_spd_icon.png" id="10_x7o88"]
+[ext_resource type="Texture2D" uid="uid://dw50o5g4f3t2k" path="res://assets/art/icons/crit_rate_icon.png" id="11_j10hy"]
+[ext_resource type="Texture2D" uid="uid://cieaoc7173nyp" path="res://assets/art/icons/crit_dmg.png" id="12_vgwqe"]
+[ext_resource type="Texture2D" uid="uid://bqumpr5nevr7k" path="res://assets/art/icons/move_spd_icon.png" id="13_rukk0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2add"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.53333336, 0.53333336, 0.6666667, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Theme" id="Theme_akvas"]
+default_font_size = 24
+
+[node name="PlayerKitUI" type="MarginContainer" node_paths=PackedStringArray("stat_difftexture_map", "stat_difflabel_map")]
+anchors_preset = -1
+anchor_right = 0.3
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_bottom = 60
+script = ExtResource("1_d85fv")
+up_texture = ExtResource("5_v2jx4")
+down_texture = ExtResource("3_xyodk")
+neutral_texture = ExtResource("4_j5ihh")
+stat_difftexture_map = {
+0: NodePath("VBoxContainer/StatsBox/VBoxContainer/HPStat/HPDiff/HPTex"),
+1: NodePath("VBoxContainer/StatsBox/VBoxContainer/AttackStat/ATKDiff/ATKTex"),
+2: NodePath("VBoxContainer/StatsBox/VBoxContainer/AttackSPDStat/ATKSPDDiff/ATKSPDTex"),
+3: NodePath("VBoxContainer/StatsBox/VBoxContainer/CritRateStat/CritRateDiff/CritRateTex"),
+4: NodePath("VBoxContainer/StatsBox/VBoxContainer/CritDMGStat/CritDMGDiff/CritDMGTex"),
+5: NodePath("VBoxContainer/StatsBox/VBoxContainer/MoveSpeedStat/MoveSPDDiff/MoveSPDTex")
+}
+stat_difflabel_map = {
+0: NodePath("VBoxContainer/StatsBox/VBoxContainer/HPStat/HPPreview"),
+1: NodePath("VBoxContainer/StatsBox/VBoxContainer/AttackStat/ATKPreview"),
+2: NodePath("VBoxContainer/StatsBox/VBoxContainer/AttackSPDStat/ATKSPDPreview"),
+3: NodePath("VBoxContainer/StatsBox/VBoxContainer/CritRateStat/CritRatePreview"),
+4: NodePath("VBoxContainer/StatsBox/VBoxContainer/CritDMGStat/CritDMGPreview"),
+5: NodePath("VBoxContainer/StatsBox/VBoxContainer/MoveSpeedStat/MoveSPDPreview")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="WeaponBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/WeaponBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 32
+text = "WEAPON"
+
+[node name="WeaponSlot" type="AspectRatioContainer" parent="VBoxContainer/WeaponBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="WeaponSlot" type="PanelContainer" parent="VBoxContainer/WeaponBox/WeaponSlot"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_j2add")
+
+[node name="WeaponTexture" type="TextureRect" parent="VBoxContainer/WeaponBox/WeaponSlot/WeaponSlot"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+
+[node name="CircletBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/CircletBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 32
+text = "CIRCLET"
+
+[node name="CircletSlot" type="AspectRatioContainer" parent="VBoxContainer/CircletBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CircletSlot" type="PanelContainer" parent="VBoxContainer/CircletBox/CircletSlot"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_j2add")
+
+[node name="CircletTexture" type="TextureRect" parent="VBoxContainer/CircletBox/CircletSlot/CircletSlot"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+
+[node name="Pendant" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Pendant"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 32
+text = "PENDANT"
+
+[node name="PendantSlot" type="AspectRatioContainer" parent="VBoxContainer/Pendant"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PendantSlot" type="PanelContainer" parent="VBoxContainer/Pendant/PendantSlot"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_j2add")
+
+[node name="PendantTexture" type="TextureRect" parent="VBoxContainer/Pendant/PendantSlot/PendantSlot"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+
+[node name="Separator" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Separator"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.33333334, 0.33333334, 0.4392157, 1)
+theme_override_font_sizes/font_size = 32
+text = "Total Stats"
+
+[node name="StatsBox" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/StatsBox"]
+layout_mode = 2
+
+[node name="HPStat" type="HBoxContainer" parent="VBoxContainer/StatsBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/HPStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/HPStat/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("8_px23e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HP" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/HPStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_colors/font_color = Color(0.53333336, 0.53333336, 0.6666667, 1)
+theme_override_font_sizes/font_size = 32
+text = "HP"
+
+[node name="HPVal" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/HPStat"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+text = "STAT"
+horizontal_alignment = 2
+
+[node name="HPPreview" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/HPStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 2
+
+[node name="HPDiff" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/HPStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="HPTex" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/HPStat/HPDiff"]
+layout_mode = 2
+texture = ExtResource("5_v2jx4")
+expand_mode = 1
+
+[node name="AttackStat" type="HBoxContainer" parent="VBoxContainer/StatsBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/AttackStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/AttackStat/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("9_y22wl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ATK" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/AttackStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_colors/font_color = Color(0.53333336, 0.53333336, 0.6666667, 1)
+theme_override_font_sizes/font_size = 32
+text = "Attack"
+
+[node name="ATKVal" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/AttackStat"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+text = "STAT"
+horizontal_alignment = 2
+
+[node name="ATKPreview" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/AttackStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 2
+
+[node name="ATKDiff" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/AttackStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="ATKTex" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/AttackStat/ATKDiff"]
+layout_mode = 2
+texture = ExtResource("5_v2jx4")
+expand_mode = 1
+
+[node name="AttackSPDStat" type="HBoxContainer" parent="VBoxContainer/StatsBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/AttackSPDStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/AttackSPDStat/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("10_x7o88")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AttackSPD" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/AttackSPDStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+tooltip_text = "Attacks Per Second"
+mouse_filter = 1
+theme = SubResource("Theme_akvas")
+theme_type_variation = &"TooltipLabel"
+theme_override_colors/font_color = Color(0.53333336, 0.53333336, 0.6666667, 1)
+theme_override_font_sizes/font_size = 32
+text = "Attack Speed"
+
+[node name="ATKSPDVal" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/AttackSPDStat"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+text = "STAT"
+horizontal_alignment = 2
+
+[node name="ATKSPDPreview" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/AttackSPDStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 2
+
+[node name="ATKSPDDiff" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/AttackSPDStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="ATKSPDTex" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/AttackSPDStat/ATKSPDDiff"]
+layout_mode = 2
+texture = ExtResource("5_v2jx4")
+expand_mode = 1
+
+[node name="CritRateStat" type="HBoxContainer" parent="VBoxContainer/StatsBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/CritRateStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/CritRateStat/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("11_j10hy")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CritRate" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/CritRateStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_colors/font_color = Color(0.53333336, 0.53333336, 0.6666667, 1)
+theme_override_font_sizes/font_size = 32
+text = "Critical Chance"
+
+[node name="CritRateVal" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/CritRateStat"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+text = "STAT"
+horizontal_alignment = 2
+
+[node name="CritRatePreview" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/CritRateStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 2
+
+[node name="CritRateDiff" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/CritRateStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="CritRateTex" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/CritRateStat/CritRateDiff"]
+layout_mode = 2
+texture = ExtResource("5_v2jx4")
+expand_mode = 1
+
+[node name="CritDMGStat" type="HBoxContainer" parent="VBoxContainer/StatsBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/CritDMGStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/CritDMGStat/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("12_vgwqe")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CritDMG" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/CritDMGStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_colors/font_color = Color(0.53333336, 0.53333336, 0.6666667, 1)
+theme_override_font_sizes/font_size = 32
+text = "Critical Damage"
+
+[node name="CritDMGVal" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/CritDMGStat"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+text = "STAT"
+horizontal_alignment = 2
+
+[node name="CritDMGPreview" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/CritDMGStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 2
+
+[node name="CritDMGDiff" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/CritDMGStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="CritDMGTex" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/CritDMGStat/CritDMGDiff"]
+layout_mode = 2
+texture = ExtResource("5_v2jx4")
+expand_mode = 1
+
+[node name="MoveSpeedStat" type="HBoxContainer" parent="VBoxContainer/StatsBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/MoveSpeedStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/MoveSpeedStat/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("13_rukk0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MoveSPD" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/MoveSpeedStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_colors/font_color = Color(0.53333336, 0.53333336, 0.6666667, 1)
+theme_override_font_sizes/font_size = 32
+text = "Movement Speed"
+
+[node name="MoveSPDVal" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/MoveSpeedStat"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+text = "STAT"
+horizontal_alignment = 2
+
+[node name="MoveSPDPreview" type="Label" parent="VBoxContainer/StatsBox/VBoxContainer/MoveSpeedStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 2
+
+[node name="MoveSPDDiff" type="AspectRatioContainer" parent="VBoxContainer/StatsBox/VBoxContainer/MoveSpeedStat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="MoveSPDTex" type="TextureRect" parent="VBoxContainer/StatsBox/VBoxContainer/MoveSpeedStat/MoveSPDDiff"]
+layout_mode = 2
+texture = ExtResource("5_v2jx4")
+expand_mode = 1

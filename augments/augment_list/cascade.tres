@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Augment" load_steps=7 format=3 uid="uid://ct3x85cicwedw"]
+
+[ext_resource type="Script" uid="uid://cqol5w0e7l7b4" path="res://augments/effects/cascade.gd" id="2_e0jml"]
+[ext_resource type="Script" uid="uid://cf0rw57ggiwtx" path="res://stats/stat_field.gd" id="3_74ug0"]
+[ext_resource type="Script" uid="uid://bw6hgli8y3lab" path="res://augments/augment.gd" id="4_32jx8"]
+[ext_resource type="Texture2D" uid="uid://bogmvdgf4u8hd" path="res://assets/art/augments/cascade/cascade_icon.png" id="5_e0jml"]
+
+[sub_resource type="Resource" id="Resource_vbiup"]
+script = ExtResource("2_e0jml")
+effect_type = 1
+metadata/_custom_type_script = "uid://cqol5w0e7l7b4"
+
+[sub_resource type="Resource" id="Resource_21ujc"]
+script = ExtResource("3_74ug0")
+stat_attribute = 2
+stat_value = -20.0
+metadata/_custom_type_script = "uid://cf0rw57ggiwtx"
+
+[resource]
+script = ExtResource("4_32jx8")
+name = "CASCADE"
+texture = ExtResource("5_e0jml")
+augment_effect = SubResource("Resource_vbiup")
+augment_stats = Array[ExtResource("3_74ug0")]([SubResource("Resource_21ujc")])
+metadata/_custom_type_script = "uid://bw6hgli8y3lab"
